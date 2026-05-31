@@ -54,7 +54,7 @@ Link Forge is a comprehensive WordPress plugin for managing redirect links and s
 | Batch Edit | ❌ | ✅ |
 | CSV Import/Export | ❌ | ✅ |
 | WP-CLI | ❌ | ✅ |
-| Price | Free | $29/year |
+| Price | Free | $19/year |
 
 ## 👨‍💻 Author
 

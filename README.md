@@ -2,7 +2,7 @@
 
 **Forge powerful links and blocks. Redirect, track, cloak, manage URLs, and embed HTML/JS/CSS snippets — all from one powerful dashboard.**
 
-[![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/gataurus/link-forge)
+[![Version](https://img.shields.io/badge/version-1.3.1-blue.svg)](https://github.com/gataurus/link-forge)
 [![License](https://img.shields.io/badge/license-GPL%20v2-green.svg)](LICENSE)
 [![PHP](https://img.shields.io/badge/PHP-7.2+-purple.svg)](https://php.net)
 [![WordPress](https://img.shields.io/badge/WordPress-5.0+-blue.svg)](https://wordpress.org)

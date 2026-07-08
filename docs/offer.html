@@ -10,99 +10,371 @@
         .doc-content h1 { font-size: 2em; margin-bottom: 24px; }
         .doc-content h2 { font-size: 1.3em; margin: 28px 0 12px; color: var(--orange); }
         .doc-content p, .doc-content li { color: var(--text-secondary); margin-bottom: 10px; line-height: 1.7; font-size: 14px; }
-        .doc-content ul, .doc-content ol { padding-left: 20px; margin-bottom: 16px; }
-        .lang-tabs { display: flex; gap: 6px; margin-bottom: 28px; flex-wrap: wrap; }
-        .lang-tab { padding: 5px 12px; border: 1px solid var(--border); border-radius: 20px; cursor: pointer; font-size: 12px; color: var(--text-secondary); background: var(--bg); transition: all var(--transition); user-select: none; }
-        .lang-tab:hover { border-color: var(--orange); color: var(--text); }
-        .lang-tab.active { background: var(--orange); color: #fff; border-color: var(--orange); }
+        .doc-content ul { padding-left: 20px; margin-bottom: 16px; }
         .lang-block { display: none; }
         .lang-block.active { display: block; }
         .back-link { display: inline-block; margin-bottom: 20px; color: var(--orange); text-decoration: none; font-size: 14px; }
+        .back-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
+    <header class="header">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">⚒️</span>
+                <span class="logo-text">Link Forge</span>
+            </a>
+            <nav class="nav">
+                <div class="lang-switcher">
+                    <select id="lang-select" onchange="switchLang(this.value)">
+                        <option value="en">🇺🇸 EN</option>
+                        <option value="ru">🇷🇺 RU</option>
+                        <option value="de">🇩🇪 DE</option>
+                        <option value="fr">🇫🇷 FR</option>
+                        <option value="es">🇪🇸 ES</option>
+                        <option value="it">🇮🇹 IT</option>
+                        <option value="zh">🇨🇳 ZH</option>
+                        <option value="ja">🇯🇵 JA</option>
+                        <option value="pt">🇧🇷 PT</option>
+                        <option value="ko">🇰🇷 KO</option>
+                    </select>
+                </div>
+            </nav>
+        </div>
+    </header>
+
     <div class="doc-content">
         <a href="../index.html" class="back-link">← Back to Link Forge</a>
         <h1>Public Offer Agreement</h1>
         
-        <div class="lang-tabs">
-            <span class="lang-tab active" data-lang="en">🇺🇸 EN</span>
-            <span class="lang-tab" data-lang="ru">🇷🇺 RU</span>
-        </div>
-        
         <!-- EN -->
         <div class="lang-block active" data-lang="en">
             <h2>1. General Provisions</h2>
-            <p>This document is an official public offer of Gataurus (hereinafter — the "Seller") to enter into a license agreement for the Link Forge PRO software (hereinafter — the "Software") on the terms set forth below.</p>
+            <p>This document is an official public offer (hereinafter — the "Offer") to enter into a license agreement for the Link Forge PRO software (hereinafter — the "Software") on the terms set forth below.</p>
             
             <h2>2. Subject of the Agreement</h2>
-            <p>The Seller grants the Buyer a non-exclusive, non-transferable right to use the Software on one (1) WordPress installation for the period corresponding to the selected tariff plan.</p>
+            <p>Under this Agreement, the Licensor grants the Licensee a non-exclusive, non-transferable right to use the Software on one (1) WordPress installation for the period corresponding to the selected tariff plan.</p>
             
             <h2>3. Tariff Plans</h2>
             <ul>
-                <li><strong>Monthly:</strong> $4.99 — 1 month access</li>
-                <li><strong>Yearly:</strong> $29 — 1 year access</li>
-                <li><strong>Lifetime:</strong> $79 — unlimited access</li>
+                <li><strong>Monthly:</strong> $4.99 — 1 month of access to all PRO features</li>
+                <li><strong>Yearly:</strong> $29 — 1 year of access to all PRO features</li>
+                <li><strong>Lifetime:</strong> $99 — unlimited access to all PRO features</li>
             </ul>
             
-            <h2>4. Payment</h2>
-            <p>Payment is processed through Robokassa. The Buyer pays the full cost of the selected tariff plan. The license key is delivered to the email address provided during payment within 24 hours of successful payment.</p>
+            <h2>4. Payment and License Delivery</h2>
+            <p>Payment is processed securely through our payment provider. The Licensee pays the full cost of the selected tariff plan. The license key is delivered to the email address provided during payment within 24 hours of successful payment confirmation.</p>
             
-            <h2>5. License Activation</h2>
-            <p>The license key must be activated in the WordPress admin panel. One license key is valid for one domain name.</p>
+            <h2>5. License Activation and Use</h2>
+            <p>The license key must be activated in the WordPress admin panel. One license key is valid for one domain name. The Licensee may not transfer, resell, or sublicense the license key to third parties.</p>
             
-            <h2>6. Updates</h2>
-            <p>The Buyer receives all Software updates released during the license validity period at no additional cost.</p>
+            <h2>6. Updates and Support</h2>
+            <p>The Licensee receives all Software updates released during the license validity period at no additional cost. Technical support is provided via email.</p>
             
-            <h2>7. Technical Support</h2>
-            <p>Technical support is provided via email: linkforge.support@gmail.com</p>
+            <h2>7. Termination</h2>
+            <p>The Agreement terminates upon expiration of the license period. The Licensor reserves the right to terminate the Agreement and deactivate the license in case of violation of the terms of use.</p>
             
-            <h2>8. Seller Details</h2>
-            <p>Gataurus<br>Email: linkforge.support@gmail.com<br>Website: https://gataurus.github.io/link-forge</p>
+            <h2>8. Contact Information</h2>
+            <p>For all inquiries regarding this Offer, please contact: <a href="mailto:linkforge.support@gmail.com">linkforge.support@gmail.com</a></p>
         </div>
         
         <!-- RU -->
         <div class="lang-block" data-lang="ru">
             <h2>1. Общие положения</h2>
-            <p>Настоящий документ является официальной публичной офертой Gataurus (далее — «Продавец») на заключение лицензионного договора на программное обеспечение Link Forge PRO (далее — «ПО») на условиях, изложенных ниже.</p>
+            <p>Настоящий документ является официальной публичной офертой (далее — «Оферта») на заключение лицензионного договора на программное обеспечение Link Forge PRO (далее — «ПО») на условиях, изложенных ниже.</p>
             
             <h2>2. Предмет договора</h2>
-            <p>Продавец предоставляет Покупателю неисключительное, непередаваемое право использования ПО на одной (1) установке WordPress на срок, соответствующий выбранному тарифному плану.</p>
+            <p>По настоящему Договору Лицензиар предоставляет Лицензиату неисключительное, непередаваемое право использования ПО на одной (1) установке WordPress на срок, соответствующий выбранному тарифному плану.</p>
             
             <h2>3. Тарифные планы</h2>
             <ul>
-                <li><strong>Месячный:</strong> $4.99 — доступ на 1 месяц</li>
-                <li><strong>Годовой:</strong> $29 — доступ на 1 год</li>
-                <li><strong>Пожизненный:</strong> $79 — неограниченный доступ</li>
+                <li><strong>Месячный:</strong> $4.99 — доступ ко всем PRO функциям на 1 месяц</li>
+                <li><strong>Годовой:</strong> $29 — доступ ко всем PRO функциям на 1 год</li>
+                <li><strong>Пожизненный:</strong> $99 — неограниченный доступ ко всем PRO функциям</li>
             </ul>
             
-            <h2>4. Оплата</h2>
-            <p>Оплата производится через Robokassa. Покупатель оплачивает полную стоимость выбранного тарифного плана. Лицензионный ключ отправляется на указанный при оплате email в течение 24 часов после успешной оплаты.</p>
+            <h2>4. Оплата и доставка лицензии</h2>
+            <p>Оплата производится безопасно через нашего платёжного партнёра. Лицензиат оплачивает полную стоимость выбранного тарифного плана. Лицензионный ключ отправляется на указанный при оплате адрес электронной почты в течение 24 часов после успешного подтверждения платежа.</p>
             
-            <h2>5. Активация лицензии</h2>
-            <p>Лицензионный ключ необходимо активировать в панели администратора WordPress. Один лицензионный ключ действителен для одного доменного имени.</p>
+            <h2>5. Активация и использование лицензии</h2>
+            <p>Лицензионный ключ необходимо активировать в панели администратора WordPress. Один лицензионный ключ действителен для одного доменного имени. Лицензиат не вправе передавать, перепродавать или сублицензировать лицензионный ключ третьим лицам.</p>
             
-            <h2>6. Обновления</h2>
-            <p>Покупатель получает все обновления ПО, выпущенные в период действия лицензии, без дополнительной платы.</p>
+            <h2>6. Обновления и поддержка</h2>
+            <p>Лицензиат получает все обновления ПО, выпущенные в период действия лицензии, без дополнительной платы. Техническая поддержка осуществляется по электронной почте.</p>
             
-            <h2>7. Техническая поддержка</h2>
-            <p>Техническая поддержка осуществляется по email: linkforge.support@gmail.com</p>
+            <h2>7. Прекращение действия</h2>
+            <p>Договор прекращает действие по истечении срока действия лицензии. Лицензиар оставляет за собой право расторгнуть Договор и деактивировать лицензию в случае нарушения условий использования.</p>
             
-            <h2>8. Реквизиты продавца</h2>
-            <p>Gataurus<br>Email: linkforge.support@gmail.com<br>Сайт: https://gataurus.github.io/link-forge</p>
+            <h2>8. Контактная информация</h2>
+            <p>По всем вопросам, касающимся настоящей Оферты, обращайтесь: <a href="mailto:linkforge.support@gmail.com">linkforge.support@gmail.com</a></p>
+        </div>
+        
+        <!-- DE -->
+        <div class="lang-block" data-lang="de">
+            <h2>1. Allgemeine Bestimmungen</h2>
+            <p>Dieses Dokument ist ein offizielles öffentliches Angebot zum Abschluss eines Lizenzvertrags für die Software Link Forge PRO.</p>
+            
+            <h2>2. Vertragsgegenstand</h2>
+            <p>Der Lizenzgeber gewährt dem Lizenznehmer ein nicht-ausschließliches, nicht-übertragbares Nutzungsrecht an der Software für eine WordPress-Installation.</p>
+            
+            <h2>3. Tarifpläne</h2>
+            <ul>
+                <li><strong>Monatlich:</strong> $4.99 — 1 Monat Zugang</li>
+                <li><strong>Jährlich:</strong> $29 — 1 Jahr Zugang</li>
+                <li><strong>Lebenslang:</strong> $99 — unbegrenzter Zugang</li>
+            </ul>
+            
+            <h2>4. Zahlung und Lizenzzustellung</h2>
+            <p>Die Zahlung erfolgt sicher über unseren Zahlungsdienstleister. Der Lizenzschlüssel wird innerhalb von 24 Stunden per E-Mail zugestellt.</p>
+            
+            <h2>5. Aktivierung und Nutzung</h2>
+            <p>Der Lizenzschlüssel muss im WordPress-Admin aktiviert werden. Ein Schlüssel gilt für eine Domain.</p>
+            
+            <h2>6. Updates und Support</h2>
+            <p>Updates sind während der Lizenzlaufzeit kostenlos. Technischer Support per E-Mail.</p>
+            
+            <h2>7. Kündigung</h2>
+            <p>Der Vertrag endet mit Ablauf der Lizenz. Bei Verstoß gegen die Nutzungsbedingungen behält sich der Lizenzgeber das Recht zur Deaktivierung vor.</p>
+            
+            <h2>8. Kontakt</h2>
+            <p><a href="mailto:linkforge.support@gmail.com">linkforge.support@gmail.com</a></p>
+        </div>
+        
+        <!-- FR -->
+        <div class="lang-block" data-lang="fr">
+            <h2>1. Dispositions générales</h2>
+            <p>Ce document constitue une offre publique officielle de contrat de licence pour le logiciel Link Forge PRO.</p>
+            
+            <h2>2. Objet du contrat</h2>
+            <p>Le Concédant accorde au Licencié un droit non exclusif et non transférable d'utilisation du Logiciel sur une installation WordPress.</p>
+            
+            <h2>3. Plans tarifaires</h2>
+            <ul>
+                <li><strong>Mensuel :</strong> $4.99 — 1 mois d'accès</li>
+                <li><strong>Annuel :</strong> $29 — 1 an d'accès</li>
+                <li><strong>À vie :</strong> $99 — accès illimité</li>
+            </ul>
+            
+            <h2>4. Paiement et livraison</h2>
+            <p>Paiement sécurisé via notre prestataire. Clé de licence envoyée par email sous 24 heures.</p>
+            
+            <h2>5. Activation et utilisation</h2>
+            <p>Activation dans l'admin WordPress. Une clé = un domaine.</p>
+            
+            <h2>6. Mises à jour et support</h2>
+            <p>Mises à jour gratuites pendant la durée de validité. Support technique par email.</p>
+            
+            <h2>7. Résiliation</h2>
+            <p>Le contrat expire à la fin de la période de licence.</p>
+            
+            <h2>8. Contact</h2>
+            <p><a href="mailto:linkforge.support@gmail.com">linkforge.support@gmail.com</a></p>
+        </div>
+        
+        <!-- ES -->
+        <div class="lang-block" data-lang="es">
+            <h2>1. Disposiciones generales</h2>
+            <p>Este documento es una oferta pública oficial para celebrar un contrato de licencia para el software Link Forge PRO.</p>
+            
+            <h2>2. Objeto del contrato</h2>
+            <p>El Licenciante otorga al Licenciatario un derecho no exclusivo e intransferible de uso del Software en una instalación de WordPress.</p>
+            
+            <h2>3. Planes tarifarios</h2>
+            <ul>
+                <li><strong>Mensual:</strong> $4.99 — 1 mes de acceso</li>
+                <li><strong>Anual:</strong> $29 — 1 año de acceso</li>
+                <li><strong>Vitalicio:</strong> $99 — acceso ilimitado</li>
+            </ul>
+            
+            <h2>4. Pago y entrega</h2>
+            <p>Pago seguro a través de nuestro proveedor. Clave enviada por email en 24 horas.</p>
+            
+            <h2>5. Activación y uso</h2>
+            <p>Activación en el admin de WordPress. Una clave = un dominio.</p>
+            
+            <h2>6. Actualizaciones y soporte</h2>
+            <p>Actualizaciones gratuitas durante la vigencia. Soporte técnico por email.</p>
+            
+            <h2>7. Terminación</h2>
+            <p>El contrato expira al final del período de licencia.</p>
+            
+            <h2>8. Contacto</h2>
+            <p><a href="mailto:linkforge.support@gmail.com">linkforge.support@gmail.com</a></p>
+        </div>
+        
+        <!-- IT -->
+        <div class="lang-block" data-lang="it">
+            <h2>1. Disposizioni generali</h2>
+            <p>Questo documento è un'offerta pubblica ufficiale per un contratto di licenza per il software Link Forge PRO.</p>
+            
+            <h2>2. Oggetto del contratto</h2>
+            <p>Il Licenziante concede al Licenziatario un diritto non esclusivo e non trasferibile di utilizzo del Software su una installazione WordPress.</p>
+            
+            <h2>3. Piani tariffari</h2>
+            <ul>
+                <li><strong>Mensile:</strong> $4.99 — 1 mese di accesso</li>
+                <li><strong>Annuale:</strong> $29 — 1 anno di accesso</li>
+                <li><strong>A vita:</strong> $99 — accesso illimitato</li>
+            </ul>
+            
+            <h2>4. Pagamento e consegna</h2>
+            <p>Pagamento sicuro tramite il nostro provider. Chiave inviata via email entro 24 ore.</p>
+            
+            <h2>5. Attivazione e utilizzo</h2>
+            <p>Attivazione nell'admin WordPress. Una chiave = un dominio.</p>
+            
+            <h2>6. Aggiornamenti e supporto</h2>
+            <p>Aggiornamenti gratuiti durante la validità. Supporto tecnico via email.</p>
+            
+            <h2>7. Cessazione</h2>
+            <p>Il contratto scade al termine del periodo di licenza.</p>
+            
+            <h2>8. Contatti</h2>
+            <p><a href="mailto:linkforge.support@gmail.com">linkforge.support@gmail.com</a></p>
+        </div>
+        
+        <!-- ZH -->
+        <div class="lang-block" data-lang="zh">
+            <h2>1. 总则</h2>
+            <p>本文件是Link Forge PRO软件许可协议的正式公开要约。</p>
+            
+            <h2>2. 协议标的</h2>
+            <p>许可方授予被许可方非独占、不可转让的软件使用权，适用于一个WordPress安装。</p>
+            
+            <h2>3. 资费计划</h2>
+            <ul>
+                <li><strong>月度：</strong>$4.99 — 1个月访问</li>
+                <li><strong>年度：</strong>$29 — 1年访问</li>
+                <li><strong>终身：</strong>$99 — 无限访问</li>
+            </ul>
+            
+            <h2>4. 付款与交付</h2>
+            <p>通过我们的支付提供商安全付款。许可密钥在24小时内通过电子邮件发送。</p>
+            
+            <h2>5. 激活与使用</h2>
+            <p>在WordPress后台激活。一个密钥 = 一个域名。</p>
+            
+            <h2>6. 更新与支持</h2>
+            <p>有效期内免费更新。通过电子邮件提供技术支持。</p>
+            
+            <h2>7. 终止</h2>
+            <p>协议在许可期结束时终止。</p>
+            
+            <h2>8. 联系方式</h2>
+            <p><a href="mailto:linkforge.support@gmail.com">linkforge.support@gmail.com</a></p>
+        </div>
+        
+        <!-- JA -->
+        <div class="lang-block" data-lang="ja">
+            <h2>1. 総則</h2>
+            <p>本書は、Link Forge PROソフトウェアのライセンス契約に関する公式な公開オファーです。</p>
+            
+            <h2>2. 契約の目的</h2>
+            <p>許諾者は、1つのWordPressインストールにおけるソフトウェアの非独占的かつ譲渡不可の使用権を付与します。</p>
+            
+            <h2>3. 料金プラン</h2>
+            <ul>
+                <li><strong>月額：</strong>$4.99 — 1ヶ月アクセス</li>
+                <li><strong>年額：</strong>$29 — 1年アクセス</li>
+                <li><strong>生涯：</strong>$99 — 無制限アクセス</li>
+            </ul>
+            
+            <h2>4. 支払いとライセンス配信</h2>
+            <p>支払いプロバイダーを通じた安全な支払い。ライセンスキーは24時間以内にメールで送信。</p>
+            
+            <h2>5. アクティベーションと使用</h2>
+            <p>WordPress管理画面でアクティベーション。1キー = 1ドメイン。</p>
+            
+            <h2>6. アップデートとサポート</h2>
+            <p>有効期間中の無料アップデート。メールによるテクニカルサポート。</p>
+            
+            <h2>7. 終了</h2>
+            <p>契約はライセンス期間の終了とともに終了します。</p>
+            
+            <h2>8. お問い合わせ</h2>
+            <p><a href="mailto:linkforge.support@gmail.com">linkforge.support@gmail.com</a></p>
+        </div>
+        
+        <!-- PT -->
+        <div class="lang-block" data-lang="pt">
+            <h2>1. Disposições gerais</h2>
+            <p>Este documento é uma oferta pública oficial para um contrato de licença do software Link Forge PRO.</p>
+            
+            <h2>2. Objeto do contrato</h2>
+            <p>O Licenciante concede ao Licenciado um direito não exclusivo e intransferível de uso do Software em uma instalação WordPress.</p>
+            
+            <h2>3. Planos tarifários</h2>
+            <ul>
+                <li><strong>Mensal:</strong> $4.99 — 1 mês de acesso</li>
+                <li><strong>Anual:</strong> $29 — 1 ano de acesso</li>
+                <li><strong>Vitalício:</strong> $99 — acesso ilimitado</li>
+            </ul>
+            
+            <h2>4. Pagamento e entrega</h2>
+            <p>Pagamento seguro através do nosso provedor. Chave enviada por email em 24 horas.</p>
+            
+            <h2>5. Ativação e uso</h2>
+            <p>Ativação no admin WordPress. Uma chave = um domínio.</p>
+            
+            <h2>6. Atualizações e suporte</h2>
+            <p>Atualizações gratuitas durante a vigência. Suporte técnico por email.</p>
+            
+            <h2>7. Rescisão</h2>
+            <p>O contrato expira ao final do período de licença.</p>
+            
+            <h2>8. Contato</h2>
+            <p><a href="mailto:linkforge.support@gmail.com">linkforge.support@gmail.com</a></p>
+        </div>
+        
+        <!-- KO -->
+        <div class="lang-block" data-lang="ko">
+            <h2>1. 총칙</h2>
+            <p>본 문서는 Link Forge PRO 소프트웨어에 대한 라이선스 계약의 공식 공개 제안입니다.</p>
+            
+            <h2>2. 계약 목적</h2>
+            <p>라이선서는 라이선시에게 하나의 WordPress 설치에 대한 비독점적, 양도 불가능한 소프트웨어 사용권을 부여합니다.</p>
+            
+            <h2>3. 요금제</h2>
+            <ul>
+                <li><strong>월간:</strong> $4.99 — 1개월 액세스</li>
+                <li><strong>연간:</strong> $29 — 1년 액세스</li>
+                <li><strong>평생:</strong> $99 — 무제한 액세스</li>
+            </ul>
+            
+            <h2>4. 결제 및 라이선스 전달</h2>
+            <p>결제 제공업체를 통한 안전한 결제. 라이선스 키는 24시간 이내에 이메일로 전송.</p>
+            
+            <h2>5. 활성화 및 사용</h2>
+            <p>WordPress 관리자에서 활성화. 1키 = 1도메인.</p>
+            
+            <h2>6. 업데이트 및 지원</h2>
+            <p>유효 기간 동안 무료 업데이트. 이메일을 통한 기술 지원.</p>
+            
+            <h2>7. 종료</h2>
+            <p>계약은 라이선스 기간 종료 시 만료됩니다.</p>
+            
+            <h2>8. 연락처</h2>
+            <p><a href="mailto:linkforge.support@gmail.com">linkforge.support@gmail.com</a></p>
         </div>
     </div>
     
     <script>
-        document.querySelectorAll('.lang-tab').forEach(tab => {
-            tab.addEventListener('click', function() {
-                const lang = this.dataset.lang;
-                document.querySelectorAll('.lang-tab').forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-                document.querySelectorAll('.lang-block').forEach(b => b.classList.remove('active'));
-                document.querySelector(`.lang-block[data-lang="${lang}"]`).classList.add('active');
-            });
-        });
+        function switchLang(lang) {
+            document.getElementById('lang-select').value = lang;
+            document.querySelectorAll('.lang-block').forEach(function(b) { b.classList.remove('active'); });
+            var block = document.querySelector('.lang-block[data-lang="' + lang + '"]');
+            if (block) block.classList.add('active');
+            document.documentElement.lang = lang;
+            localStorage.setItem('forge_lang', lang);
+        }
+        
+        (function() {
+            var saved = localStorage.getItem('forge_lang');
+            var browserLang = (navigator.language || 'en').substring(0, 2);
+            var supported = ['en','ru','de','fr','es','it','zh','ja','pt','ko'];
+            var lang = saved || (supported.indexOf(browserLang) !== -1 ? browserLang : 'en');
+            switchLang(lang);
+        })();
     </script>
 </body>
 </html>

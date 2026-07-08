@@ -1,7 +1,3 @@
-// ================================================================
-// Link Forge PRO — Main Script
-// ================================================================
-
 var currentLang = 'en';
 
 function detectLang() {
@@ -43,17 +39,16 @@ function changeLang(lang) {
 
 // Payment
 var selectedPlan = 'yearly';
-var planPrice = '$29';
 
 function buy(plan) {
     selectedPlan = plan;
-    if (plan === 'monthly') planPrice = '$4.99';
-    else if (plan === 'yearly') planPrice = '$29';
-    else if (plan === 'lifetime') planPrice = '$79';
     
     var t = FORGE_TRANSLATIONS[currentLang] || FORGE_TRANSLATIONS['en'];
-    document.getElementById('modal-plan-name').textContent = t['plan_' + plan];
-    document.getElementById('modal-price').textContent = planPrice + ' — Link Forge PRO (' + t['plan_' + plan] + ')';
+    var planName = t['plan_' + plan];
+    var price = t['price_' + plan];
+    
+    document.getElementById('modal-plan-name').textContent = planName;
+    document.getElementById('modal-price').textContent = price + ' — Link Forge PRO (' + planName + ')';
     document.getElementById('payment-modal').classList.add('open');
     document.getElementById('email').focus();
 }

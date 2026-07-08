@@ -3,54 +3,67 @@
 // ================================================================
 
 let currentLang = 'en';
-let translations = {};
 
 // ================================================================
 // LANGUAGE
 // ================================================================
 
 function detectLang() {
+    // 1. Проверяем сохранённый язык
     const saved = localStorage.getItem('forge_lang');
-    if (saved) return saved;
-    
-    const browserLang = (navigator.language || navigator.userLanguage || 'en').substring(0, 2);
-    const supported = ['en', 'ru', 'de', 'fr', 'es', 'it', 'zh', 'ja', 'pt', 'ko'];
-    return supported.includes(browserLang) ? browserLang : 'en';
-}
-
-async function loadTranslations(lang) {
-    try {
-        const response = await fetch(`languages/${lang}.json`);
-        if (!response.ok) throw new Error('Failed to load');
-        translations = await response.json();
-        currentLang = lang;
-        localStorage.setItem('forge_lang', lang);
-        applyTranslations();
-        document.getElementById('lang-select').value = lang;
-        document.documentElement.lang = lang;
-    } catch (err) {
-        console.error('Translation load error:', err);
-        if (lang !== 'en') loadTranslations('en');
+    if (saved && typeof FORGE_TRANSLATIONS !== 'undefined' && FORGE_TRANSLATIONS[saved]) {
+        return saved;
     }
+    
+    // 2. Определяем язык браузера
+    const browserLang = (navigator.language || navigator.userLanguage || 'en').substring(0, 2);
+    const supported = {
+        en: 'en', ru: 'ru', de: 'de', fr: 'fr', es: 'es',
+        it: 'it', zh: 'zh', ja: 'ja', pt: 'pt', ko: 'ko'
+    };
+    
+    return supported[browserLang] || 'en';
 }
 
-function applyTranslations() {
+function applyTranslations(lang) {
+    // Проверяем, загружены ли переводы
+    if (typeof FORGE_TRANSLATIONS === 'undefined') {
+        console.error('FORGE_TRANSLATIONS not loaded! Check js/translations.js');
+        return;
+    }
+    
+    const t = FORGE_TRANSLATIONS[lang];
+    if (!t) {
+        console.warn('Language not found:', lang, 'falling back to en');
+        return applyTranslations('en');
+    }
+    
+    currentLang = lang;
+    localStorage.setItem('forge_lang', lang);
+    document.documentElement.lang = lang;
+    
+    // Применяем переводы
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[key]) {
-            if (el.tagName === 'INPUT' && el.type === 'submit') {
-                el.value = translations[key];
-            } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                el.placeholder = translations[key];
+        if (t[key]) {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                if (el.type === 'submit' || el.type === 'button') {
+                    el.value = t[key];
+                } else {
+                    el.placeholder = t[key];
+                }
             } else {
-                el.textContent = translations[key];
+                el.textContent = t[key];
             }
         }
     });
+    
+    console.log('Translations applied:', lang, Object.keys(t).length, 'keys');
 }
 
 function changeLang(lang) {
-    loadTranslations(lang);
+    document.getElementById('lang-select').value = lang;
+    applyTranslations(lang);
 }
 
 // ================================================================
@@ -69,10 +82,14 @@ function buy(plan) {
         case 'lifetime': planPrice = '$79'; break;
     }
     
+    const t = (typeof FORGE_TRANSLATIONS !== 'undefined' && FORGE_TRANSLATIONS[currentLang]) 
+        ? FORGE_TRANSLATIONS[currentLang] 
+        : { plan_monthly: 'Monthly', plan_yearly: 'Yearly', plan_lifetime: 'Lifetime' };
+    
     const planNames = {
-        monthly: translations['plan_monthly'] || 'Monthly',
-        yearly: translations['plan_yearly'] || 'Yearly',
-        lifetime: translations['plan_lifetime'] || 'Lifetime'
+        monthly: t.plan_monthly,
+        yearly: t.plan_yearly,
+        lifetime: t.plan_lifetime
     };
     
     document.getElementById('modal-plan-name').textContent = planNames[plan];
@@ -121,7 +138,7 @@ async function submitPayment(e) {
 }
 
 // ================================================================
-// MODAL CLOSE ON CLICK OUTSIDE
+// MODAL CLOSE
 // ================================================================
 
 document.getElementById('payment-modal').addEventListener('click', function(e) {
@@ -133,16 +150,14 @@ document.addEventListener('keydown', function(e) {
 });
 
 // ================================================================
-// SMOOTH SCROLL FOR ANCHOR LINKS
+// SMOOTH SCROLL
 // ================================================================
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
 
@@ -153,5 +168,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.addEventListener('DOMContentLoaded', function() {
     const lang = detectLang();
     document.getElementById('lang-select').value = lang;
-    loadTranslations(lang);
+    applyTranslations(lang);
 });

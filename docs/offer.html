@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Offer — Link Forge</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .doc-content { max-width: 800px; margin: 60px auto; padding: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+        .doc-content h1 { font-size: 2em; margin-bottom: 24px; }
+        .doc-content h2 { font-size: 1.3em; margin: 28px 0 12px; color: var(--orange); }
+        .doc-content p, .doc-content li { color: var(--text-secondary); margin-bottom: 10px; line-height: 1.7; font-size: 14px; }
+        .doc-content ul, .doc-content ol { padding-left: 20px; margin-bottom: 16px; }
+        .lang-tabs { display: flex; gap: 6px; margin-bottom: 28px; flex-wrap: wrap; }
+        .lang-tab { padding: 5px 12px; border: 1px solid var(--border); border-radius: 20px; cursor: pointer; font-size: 12px; color: var(--text-secondary); background: var(--bg); transition: all var(--transition); user-select: none; }
+        .lang-tab:hover { border-color: var(--orange); color: var(--text); }
+        .lang-tab.active { background: var(--orange); color: #fff; border-color: var(--orange); }
+        .lang-block { display: none; }
+        .lang-block.active { display: block; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--orange); text-decoration: none; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="doc-content">
+        <a href="../index.html" class="back-link">← Back to Link Forge</a>
+        <h1>Public Offer Agreement</h1>
+        
+        <div class="lang-tabs">
+            <span class="lang-tab active" data-lang="en">🇺🇸 EN</span>
+            <span class="lang-tab" data-lang="ru">🇷🇺 RU</span>
+        </div>
+        
+        <!-- EN -->
+        <div class="lang-block active" data-lang="en">
+            <h2>1. General Provisions</h2>
+            <p>This document is an official public offer of Gataurus (hereinafter — the "Seller") to enter into a license agreement for the Link Forge PRO software (hereinafter — the "Software") on the terms set forth below.</p>
+            
+            <h2>2. Subject of the Agreement</h2>
+            <p>The Seller grants the Buyer a non-exclusive, non-transferable right to use the Software on one (1) WordPress installation for the period corresponding to the selected tariff plan.</p>
+            
+            <h2>3. Tariff Plans</h2>
+            <ul>
+                <li><strong>Monthly:</strong> $4.99 — 1 month access</li>
+                <li><strong>Yearly:</strong> $29 — 1 year access</li>
+                <li><strong>Lifetime:</strong> $79 — unlimited access</li>
+            </ul>
+            
+            <h2>4. Payment</h2>
+            <p>Payment is processed through Robokassa. The Buyer pays the full cost of the selected tariff plan. The license key is delivered to the email address provided during payment within 24 hours of successful payment.</p>
+            
+            <h2>5. License Activation</h2>
+            <p>The license key must be activated in the WordPress admin panel. One license key is valid for one domain name.</p>
+            
+            <h2>6. Updates</h2>
+            <p>The Buyer receives all Software updates released during the license validity period at no additional cost.</p>
+            
+            <h2>7. Technical Support</h2>
+            <p>Technical support is provided via email: linkforge.support@gmail.com</p>
+            
+            <h2>8. Seller Details</h2>
+            <p>Gataurus<br>Email: linkforge.support@gmail.com<br>Website: https://gataurus.github.io/link-forge</p>
+        </div>
+        
+        <!-- RU -->
+        <div class="lang-block" data-lang="ru">
+            <h2>1. Общие положения</h2>
+            <p>Настоящий документ является официальной публичной офертой Gataurus (далее — «Продавец») на заключение лицензионного договора на программное обеспечение Link Forge PRO (далее — «ПО») на условиях, изложенных ниже.</p>
+            
+            <h2>2. Предмет договора</h2>
+            <p>Продавец предоставляет Покупателю неисключительное, непередаваемое право использования ПО на одной (1) установке WordPress на срок, соответствующий выбранному тарифному плану.</p>
+            
+            <h2>3. Тарифные планы</h2>
+            <ul>
+                <li><strong>Месячный:</strong> $4.99 — доступ на 1 месяц</li>
+                <li><strong>Годовой:</strong> $29 — доступ на 1 год</li>
+                <li><strong>Пожизненный:</strong> $79 — неограниченный доступ</li>
+            </ul>
+            
+            <h2>4. Оплата</h2>
+            <p>Оплата производится через Robokassa. Покупатель оплачивает полную стоимость выбранного тарифного плана. Лицензионный ключ отправляется на указанный при оплате email в течение 24 часов после успешной оплаты.</p>
+            
+            <h2>5. Активация лицензии</h2>
+            <p>Лицензионный ключ необходимо активировать в панели администратора WordPress. Один лицензионный ключ действителен для одного доменного имени.</p>
+            
+            <h2>6. Обновления</h2>
+            <p>Покупатель получает все обновления ПО, выпущенные в период действия лицензии, без дополнительной платы.</p>
+            
+            <h2>7. Техническая поддержка</h2>
+            <p>Техническая поддержка осуществляется по email: linkforge.support@gmail.com</p>
+            
+            <h2>8. Реквизиты продавца</h2>
+            <p>Gataurus<br>Email: linkforge.support@gmail.com<br>Сайт: https://gataurus.github.io/link-forge</p>
+        </div>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.lang-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+                document.querySelectorAll('.lang-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                document.querySelectorAll('.lang-block').forEach(b => b.classList.remove('active'));
+                document.querySelector(`.lang-block[data-lang="${lang}"]`).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

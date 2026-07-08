@@ -1,145 +1,496 @@
 // ================================================================
-// Link Forge PRO — Main Script
+// Link Forge PRO — Translations (10 languages)
 // ================================================================
 
-let currentLang = 'en';
-
-// ================================================================
-// LANGUAGE
-// ================================================================
-
-function detectLang() {
-    const saved = localStorage.getItem('forge_lang');
-    if (saved && FORGE_TRANSLATIONS[saved]) return saved;
-    
-    const browserLang = (navigator.language || navigator.userLanguage || 'en').substring(0, 2);
-    const supported = ['en', 'ru', 'de', 'fr', 'es', 'it', 'zh', 'ja', 'pt', 'ko'];
-    return supported.includes(browserLang) ? browserLang : 'en';
-}
-
-function applyTranslations(lang) {
-    const t = FORGE_TRANSLATIONS[lang] || FORGE_TRANSLATIONS['en'];
-    currentLang = lang;
-    localStorage.setItem('forge_lang', lang);
-    document.documentElement.lang = lang;
-    
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (t[key]) {
-            if (el.tagName === 'INPUT' && el.type === 'submit') {
-                el.value = t[key];
-            } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                el.placeholder = t[key];
-            } else {
-                el.textContent = t[key];
-            }
-        }
-    });
-}
-
-function changeLang(lang) {
-    document.getElementById('lang-select').value = lang;
-    applyTranslations(lang);
-}
-
-// ================================================================
-// PAYMENT
-// ================================================================
-
-let selectedPlan = 'yearly';
-let planPrice = '$29';
-
-function buy(plan) {
-    selectedPlan = plan;
-    
-    switch (plan) {
-        case 'monthly': planPrice = '$4.99'; break;
-        case 'yearly': planPrice = '$29'; break;
-        case 'lifetime': planPrice = '$79'; break;
+var FORGE_TRANSLATIONS = {
+    en: {
+        hero_badge: "WordPress Plugin",
+        hero_title: "Forge Powerful Links & Shortcodes",
+        hero_desc: "Create trackable redirect links, cloak URLs, embed custom code, and protect with passwords — all from one powerful dashboard.",
+        hero_cta: "Get PRO Now",
+        hero_free: "Try Free Version",
+        features_title: "Everything You Need",
+        feature_1_title: "Smart Redirects",
+        feature_1_desc: "301, 302, 307 redirects with custom URL prefixes and link masking.",
+        feature_2_title: "Shortcode Blocks",
+        feature_2_desc: "Embed HTML, JavaScript, or CSS anywhere with simple shortcodes.",
+        feature_3_title: "Click Tracking",
+        feature_3_desc: "Monitor every click with IP, user-agent, and referrer logging.",
+        feature_4_title: "Password Protection",
+        feature_4_desc: "Secure sensitive links with passwords. PRO feature.",
+        feature_5_title: "10 Languages",
+        feature_5_desc: "Fully translated into English, Russian, German, French, Spanish, Italian, Chinese, Japanese, Portuguese, Korean.",
+        feature_6_title: "Batch Edit & CSV",
+        feature_6_desc: "Edit multiple links at once. Import/export CSV with auto-backup. PRO feature.",
+        pricing_title: "Choose Your Plan",
+        pricing_subtitle: "One-time payment. No recurring fees. Lifetime updates.",
+        plan_monthly: "Monthly",
+        plan_yearly: "Yearly",
+        plan_lifetime: "Lifetime",
+        popular: "Most Popular",
+        save: "Save 50%",
+        btn_buy: "Buy Now",
+        comparison_title: "Free vs PRO",
+        comp_feature: "Feature",
+        comp_links: "Links",
+        comp_shortcodes: "Shortcodes",
+        comp_batch: "Batch Edit",
+        comp_csv: "CSV Import/Export",
+        comp_password: "Password Protection",
+        comp_price: "Price",
+        faq_title: "Frequently Asked Questions",
+        faq_1_q: "How do I activate PRO?",
+        faq_1_a: "After purchase, you'll receive a license key by email. Enter it in WordPress admin → Link Forge → Settings → Activate.",
+        faq_2_q: "Can I upgrade from monthly to lifetime?",
+        faq_2_a: "Yes! Purchase the lifetime plan anytime. Your new key will replace the old one.",
+        faq_3_q: "Is the license for one site?",
+        faq_3_a: "Yes, one license = one WordPress site. Need more? Purchase additional licenses.",
+        faq_4_q: "How do I get the free version?",
+        faq_4_a: "Download it from the WordPress.org plugin repository or install directly from your WordPress admin.",
+        modal_title: "Complete Your Purchase",
+        modal_email: "Email for license key delivery",
+        modal_pay: "Pay with Card",
+        footer_rights: "All rights reserved."
+    },
+    ru: {
+        hero_badge: "Плагин WordPress",
+        hero_title: "Создавайте мощные ссылки и шорткоды",
+        hero_desc: "Отслеживаемые редиректы, маскировка URL, вставка своего кода и защита паролем — всё в одной мощной панели управления.",
+        hero_cta: "Купить PRO",
+        hero_free: "Попробовать бесплатно",
+        features_title: "Всё, что вам нужно",
+        feature_1_title: "Умные редиректы",
+        feature_1_desc: "Редиректы 301, 302, 307 с пользовательскими URL-префиксами и маскировкой ссылок.",
+        feature_2_title: "Шорткоды",
+        feature_2_desc: "Вставляйте HTML, JavaScript или CSS куда угодно с помощью простых шорткодов.",
+        feature_3_title: "Отслеживание кликов",
+        feature_3_desc: "Отслеживайте каждый клик с записью IP, user-agent и реферера.",
+        feature_4_title: "Защита паролем",
+        feature_4_desc: "Защищайте sensitive ссылки паролями. PRO функция.",
+        feature_5_title: "10 языков",
+        feature_5_desc: "Полностью переведён на русский, английский, немецкий, французский, испанский, итальянский, китайский, японский, португальский, корейский.",
+        feature_6_title: "Пакетное редактирование и CSV",
+        feature_6_desc: "Редактируйте несколько ссылок сразу. Импорт/экспорт CSV с авто-бэкапом. PRO функция.",
+        pricing_title: "Выберите тариф",
+        pricing_subtitle: "Единоразовый платёж. Без подписок. Пожизненные обновления.",
+        plan_monthly: "Месяц",
+        plan_yearly: "Год",
+        plan_lifetime: "Навсегда",
+        popular: "Популярный",
+        save: "Экономия 50%",
+        btn_buy: "Купить",
+        comparison_title: "Free vs PRO",
+        comp_feature: "Функция",
+        comp_links: "Ссылки",
+        comp_shortcodes: "Шорткоды",
+        comp_batch: "Пакетное редактирование",
+        comp_csv: "Импорт/Экспорт CSV",
+        comp_password: "Защита паролем",
+        comp_price: "Цена",
+        faq_title: "Часто задаваемые вопросы",
+        faq_1_q: "Как активировать PRO?",
+        faq_1_a: "После покупки вы получите лицензионный ключ на email. Введите его в админке WordPress → Link Forge → Настройки → Активировать.",
+        faq_2_q: "Можно ли перейти с месячного на пожизненный тариф?",
+        faq_2_a: "Да! Купите пожизненный тариф в любое время. Новый ключ заменит старый.",
+        faq_3_q: "Лицензия на один сайт?",
+        faq_3_a: "Да, одна лицензия = один сайт на WordPress. Нужно больше? Приобретите дополнительные лицензии.",
+        faq_4_q: "Где скачать бесплатную версию?",
+        faq_4_a: "Скачайте из репозитория WordPress.org или установите прямо из админки WordPress.",
+        modal_title: "Завершение покупки",
+        modal_email: "Email для доставки лицензионного ключа",
+        modal_pay: "Оплатить картой",
+        footer_rights: "Все права защищены."
+    },
+    de: {
+        hero_badge: "WordPress Plugin",
+        hero_title: "Erstellen Sie leistungsstarke Links & Shortcodes",
+        hero_desc: "Verfolgbare Weiterleitungen, URL-Verschleierung, Einbettung von eigenem Code und Passwortschutz – alles in einem leistungsstarken Dashboard.",
+        hero_cta: "Jetzt PRO kaufen",
+        hero_free: "Kostenlos testen",
+        features_title: "Alles, was Sie brauchen",
+        feature_1_title: "Intelligente Weiterleitungen",
+        feature_1_desc: "301, 302, 307 Weiterleitungen mit benutzerdefinierten URL-Präfixen und Link-Masking.",
+        feature_2_title: "Shortcode-Blöcke",
+        feature_2_desc: "Betten Sie HTML, JavaScript oder CSS überall mit einfachen Shortcodes ein.",
+        feature_3_title: "Klick-Tracking",
+        feature_3_desc: "Überwachen Sie jeden Klick mit IP-, User-Agent- und Referrer-Protokollierung.",
+        feature_4_title: "Passwortschutz",
+        feature_4_desc: "Sichern Sie sensible Links mit Passwörtern. PRO-Funktion.",
+        feature_5_title: "10 Sprachen",
+        feature_5_desc: "Vollständig übersetzt in Deutsch, Englisch, Russisch, Französisch, Spanisch, Italienisch, Chinesisch, Japanisch, Portugiesisch, Koreanisch.",
+        feature_6_title: "Stapelbearbeitung & CSV",
+        feature_6_desc: "Bearbeiten Sie mehrere Links gleichzeitig. CSV-Import/Export mit automatischem Backup. PRO-Funktion.",
+        pricing_title: "Wählen Sie Ihren Plan",
+        pricing_subtitle: "Einmalzahlung. Keine Abos. Lebenslange Updates.",
+        plan_monthly: "Monatlich",
+        plan_yearly: "Jährlich",
+        plan_lifetime: "Lebenslang",
+        popular: "Am beliebtesten",
+        save: "50% sparen",
+        btn_buy: "Kaufen",
+        comparison_title: "Free vs PRO",
+        comp_feature: "Funktion",
+        comp_links: "Links",
+        comp_shortcodes: "Shortcodes",
+        comp_batch: "Stapelbearbeitung",
+        comp_csv: "CSV Import/Export",
+        comp_password: "Passwortschutz",
+        comp_price: "Preis",
+        faq_title: "Häufig gestellte Fragen",
+        faq_1_q: "Wie aktiviere ich PRO?",
+        faq_1_a: "Nach dem Kauf erhalten Sie einen Lizenzschlüssel per E-Mail. Geben Sie ihn im WordPress-Admin ein → Link Forge → Einstellungen → Aktivieren.",
+        faq_2_q: "Kann ich von monatlich auf lebenslang upgraden?",
+        faq_2_a: "Ja! Kaufen Sie den lebenslangen Plan jederzeit. Ihr neuer Schlüssel ersetzt den alten.",
+        faq_3_q: "Gilt die Lizenz für eine Seite?",
+        faq_3_a: "Ja, eine Lizenz = eine WordPress-Seite. Mehr benötigt? Kaufen Sie weitere Lizenzen.",
+        faq_4_q: "Wo bekomme ich die kostenlose Version?",
+        faq_4_a: "Laden Sie sie aus dem WordPress.org-Plugin-Verzeichnis herunter oder installieren Sie sie direkt aus Ihrem WordPress-Admin.",
+        modal_title: "Kauf abschließen",
+        modal_email: "E-Mail für Lizenzschlüssel-Zustellung",
+        modal_pay: "Mit Karte bezahlen",
+        footer_rights: "Alle Rechte vorbehalten."
+    },
+    fr: {
+        hero_badge: "Plugin WordPress",
+        hero_title: "Créez des liens et shortcodes puissants",
+        hero_desc: "Redirections traçables, masquage d'URL, intégration de code et protection par mot de passe – tout depuis un tableau de bord puissant.",
+        hero_cta: "Acheter PRO",
+        hero_free: "Essayer gratuitement",
+        features_title: "Tout ce dont vous avez besoin",
+        feature_1_title: "Redirections intelligentes",
+        feature_1_desc: "Redirections 301, 302, 307 avec préfixes d'URL personnalisés et masquage de liens.",
+        feature_2_title: "Blocs de shortcodes",
+        feature_2_desc: "Intégrez du HTML, JavaScript ou CSS n'importe où avec des shortcodes simples.",
+        feature_3_title: "Suivi des clics",
+        feature_3_desc: "Surveillez chaque clic avec journalisation IP, user-agent et référent.",
+        feature_4_title: "Protection par mot de passe",
+        feature_4_desc: "Sécurisez les liens sensibles avec des mots de passe. Fonction PRO.",
+        feature_5_title: "10 langues",
+        feature_5_desc: "Entièrement traduit en français, anglais, russe, allemand, espagnol, italien, chinois, japonais, portugais, coréen.",
+        feature_6_title: "Édition par lot et CSV",
+        feature_6_desc: "Modifiez plusieurs liens à la fois. Import/export CSV avec sauvegarde automatique. Fonction PRO.",
+        pricing_title: "Choisissez votre formule",
+        pricing_subtitle: "Paiement unique. Sans abonnement. Mises à jour à vie.",
+        plan_monthly: "Mensuel",
+        plan_yearly: "Annuel",
+        plan_lifetime: "À vie",
+        popular: "Le plus populaire",
+        save: "Économisez 50%",
+        btn_buy: "Acheter",
+        comparison_title: "Free vs PRO",
+        comp_feature: "Fonctionnalité",
+        comp_links: "Liens",
+        comp_shortcodes: "Shortcodes",
+        comp_batch: "Édition par lot",
+        comp_csv: "Import/Export CSV",
+        comp_password: "Protection par mot de passe",
+        comp_price: "Prix",
+        faq_title: "Questions fréquentes",
+        faq_1_q: "Comment activer PRO ?",
+        faq_1_a: "Après l'achat, vous recevrez une clé de licence par email. Saisissez-la dans l'admin WordPress → Link Forge → Paramètres → Activer.",
+        faq_2_q: "Puis-je passer du forfait mensuel au forfait à vie ?",
+        faq_2_a: "Oui ! Achetez le forfait à vie à tout moment. Votre nouvelle clé remplacera l'ancienne.",
+        faq_3_q: "La licence est-elle pour un seul site ?",
+        faq_3_a: "Oui, une licence = un site WordPress. Besoin de plus ? Achetez des licences supplémentaires.",
+        faq_4_q: "Où obtenir la version gratuite ?",
+        faq_4_a: "Téléchargez-la depuis le répertoire WordPress.org ou installez-la directement depuis votre admin WordPress.",
+        modal_title: "Finaliser l'achat",
+        modal_email: "Email pour la livraison de la clé de licence",
+        modal_pay: "Payer par carte",
+        footer_rights: "Tous droits réservés."
+    },
+    es: {
+        hero_badge: "Plugin de WordPress",
+        hero_title: "Cree enlaces y shortcodes potentes",
+        hero_desc: "Redirecciones rastreables, enmascaramiento de URL, inserción de código y protección con contraseña – todo desde un panel potente.",
+        hero_cta: "Comprar PRO",
+        hero_free: "Probar gratis",
+        features_title: "Todo lo que necesita",
+        feature_1_title: "Redirecciones inteligentes",
+        feature_1_desc: "Redirecciones 301, 302, 307 con prefijos de URL personalizados y enmascaramiento de enlaces.",
+        feature_2_title: "Bloques de shortcodes",
+        feature_2_desc: "Inserte HTML, JavaScript o CSS en cualquier lugar con shortcodes simples.",
+        feature_3_title: "Seguimiento de clics",
+        feature_3_desc: "Monitoree cada clic con registro de IP, user-agent y referente.",
+        feature_4_title: "Protección con contraseña",
+        feature_4_desc: "Asegure enlaces sensibles con contraseñas. Función PRO.",
+        feature_5_title: "10 idiomas",
+        feature_5_desc: "Completamente traducido al español, inglés, ruso, alemán, francés, italiano, chino, japonés, portugués, coreano.",
+        feature_6_title: "Edición por lotes y CSV",
+        feature_6_desc: "Edite múltiples enlaces a la vez. Importar/exportar CSV con respaldo automático. Función PRO.",
+        pricing_title: "Elija su plan",
+        pricing_subtitle: "Pago único. Sin suscripciones. Actualizaciones de por vida.",
+        plan_monthly: "Mensual",
+        plan_yearly: "Anual",
+        plan_lifetime: "Para siempre",
+        popular: "Más popular",
+        save: "Ahorre 50%",
+        btn_buy: "Comprar",
+        comparison_title: "Free vs PRO",
+        comp_feature: "Función",
+        comp_links: "Enlaces",
+        comp_shortcodes: "Shortcodes",
+        comp_batch: "Edición por lotes",
+        comp_csv: "Importar/Exportar CSV",
+        comp_password: "Protección con contraseña",
+        comp_price: "Precio",
+        faq_title: "Preguntas frecuentes",
+        faq_1_q: "¿Cómo activo PRO?",
+        faq_1_a: "Después de la compra, recibirá una clave de licencia por email. Ingrese en admin WordPress → Link Forge → Ajustes → Activar.",
+        faq_2_q: "¿Puedo pasar de mensual a vitalicio?",
+        faq_2_a: "¡Sí! Compre el plan vitalicio en cualquier momento. Su nueva clave reemplazará la anterior.",
+        faq_3_q: "¿La licencia es para un solo sitio?",
+        faq_3_a: "Sí, una licencia = un sitio WordPress. ¿Necesita más? Compre licencias adicionales.",
+        faq_4_q: "¿Dónde obtengo la versión gratuita?",
+        faq_4_a: "Descárguela del repositorio de WordPress.org o instálela directamente desde su admin de WordPress.",
+        modal_title: "Completar compra",
+        modal_email: "Email para entrega de clave de licencia",
+        modal_pay: "Pagar con tarjeta",
+        footer_rights: "Todos los derechos reservados."
+    },
+    it: {
+        hero_badge: "Plugin WordPress",
+        hero_title: "Crea link e shortcode potenti",
+        hero_desc: "Reindirizzamenti tracciabili, mascheramento URL, integrazione di codice e protezione con password – tutto da un potente pannello di controllo.",
+        hero_cta: "Acquista PRO",
+        hero_free: "Prova gratis",
+        features_title: "Tutto ciò di cui hai bisogno",
+        feature_1_title: "Reindirizzamenti intelligenti",
+        feature_1_desc: "Reindirizzamenti 301, 302, 307 con prefissi URL personalizzati e mascheramento dei link.",
+        feature_2_title: "Blocchi shortcode",
+        feature_2_desc: "Inserisci HTML, JavaScript o CSS ovunque con semplici shortcode.",
+        feature_3_title: "Tracciamento click",
+        feature_3_desc: "Monitora ogni click con registrazione IP, user-agent e referrer.",
+        feature_4_title: "Protezione con password",
+        feature_4_desc: "Proteggi i link sensibili con password. Funzione PRO.",
+        feature_5_title: "10 lingue",
+        feature_5_desc: "Completamente tradotto in italiano, inglese, russo, tedesco, francese, spagnolo, cinese, giapponese, portoghese, coreano.",
+        feature_6_title: "Modifica in blocco e CSV",
+        feature_6_desc: "Modifica più link contemporaneamente. Importa/esporta CSV con backup automatico. Funzione PRO.",
+        pricing_title: "Scegli il tuo piano",
+        pricing_subtitle: "Pagamento unico. Nessun abbonamento. Aggiornamenti a vita.",
+        plan_monthly: "Mensile",
+        plan_yearly: "Annuale",
+        plan_lifetime: "A vita",
+        popular: "Più popolare",
+        save: "Risparmia 50%",
+        btn_buy: "Acquista",
+        comparison_title: "Free vs PRO",
+        comp_feature: "Funzione",
+        comp_links: "Link",
+        comp_shortcodes: "Shortcode",
+        comp_batch: "Modifica in blocco",
+        comp_csv: "Import/Export CSV",
+        comp_password: "Protezione password",
+        comp_price: "Prezzo",
+        faq_title: "Domande frequenti",
+        faq_1_q: "Come attivo PRO?",
+        faq_1_a: "Dopo l'acquisto, riceverai una chiave di licenza via email. Inseriscila in admin WordPress → Link Forge → Impostazioni → Attiva.",
+        faq_2_q: "Posso passare da mensile a vita?",
+        faq_2_a: "Sì! Acquista il piano a vita in qualsiasi momento. La nuova chiave sostituirà quella vecchia.",
+        faq_3_q: "La licenza è per un solo sito?",
+        faq_3_a: "Sì, una licenza = un sito WordPress. Ne servono altre? Acquista licenze aggiuntive.",
+        faq_4_q: "Dove trovo la versione gratuita?",
+        faq_4_a: "Scaricala dal repository WordPress.org o installala direttamente dalla tua admin WordPress.",
+        modal_title: "Completa l'acquisto",
+        modal_email: "Email per la consegna della chiave di licenza",
+        modal_pay: "Paga con carta",
+        footer_rights: "Tutti i diritti riservati."
+    },
+    zh: {
+        hero_badge: "WordPress 插件",
+        hero_title: "创建强大的链接和短代码",
+        hero_desc: "可追踪的重定向、URL伪装、代码嵌入和密码保护——尽在一个强大的仪表板中。",
+        hero_cta: "立即购买 PRO",
+        hero_free: "免费试用",
+        features_title: "您需要的一切",
+        feature_1_title: "智能重定向",
+        feature_1_desc: "301、302、307重定向，支持自定义URL前缀和链接伪装。",
+        feature_2_title: "短代码块",
+        feature_2_desc: "使用简单的短代码在任何地方嵌入HTML、JavaScript或CSS。",
+        feature_3_title: "点击追踪",
+        feature_3_desc: "监控每次点击，记录IP、user-agent和来源。",
+        feature_4_title: "密码保护",
+        feature_4_desc: "用密码保护敏感链接。PRO功能。",
+        feature_5_title: "10种语言",
+        feature_5_desc: "完全翻译为中文、英语、俄语、德语、法语、西班牙语、意大利语、日语、葡萄牙语、韩语。",
+        feature_6_title: "批量编辑和CSV",
+        feature_6_desc: "同时编辑多个链接。CSV导入/导出，自动备份。PRO功能。",
+        pricing_title: "选择您的计划",
+        pricing_subtitle: "一次性付款。无续费。终身更新。",
+        plan_monthly: "月度",
+        plan_yearly: "年度",
+        plan_lifetime: "终身",
+        popular: "最受欢迎",
+        save: "节省50%",
+        btn_buy: "购买",
+        comparison_title: "免费版 vs 专业版",
+        comp_feature: "功能",
+        comp_links: "链接",
+        comp_shortcodes: "短代码",
+        comp_batch: "批量编辑",
+        comp_csv: "CSV导入/导出",
+        comp_password: "密码保护",
+        comp_price: "价格",
+        faq_title: "常见问题",
+        faq_1_q: "如何激活PRO？",
+        faq_1_a: "购买后，您将通过电子邮件收到许可证密钥。在WordPress后台 → Link Forge → 设置 → 激活中输入。",
+        faq_2_q: "可以从月度升级到终身吗？",
+        faq_2_a: "可以！随时购买终身计划。新密钥将替换旧密钥。",
+        faq_3_q: "许可证只适用于一个网站吗？",
+        faq_3_a: "是的，一个许可证 = 一个WordPress网站。需要更多？购买额外的许可证。",
+        faq_4_q: "如何获取免费版本？",
+        faq_4_a: "从WordPress.org插件仓库下载，或直接从WordPress后台安装。",
+        modal_title: "完成购买",
+        modal_email: "用于接收许可证密钥的邮箱",
+        modal_pay: "用卡支付",
+        footer_rights: "版权所有。"
+    },
+    ja: {
+        hero_badge: "WordPress プラグイン",
+        hero_title: "強力なリンクとショートコードを作成",
+        hero_desc: "追跡可能なリダイレクト、URL秘匿、コード埋め込み、パスワード保護 — すべてを強力なダッシュボードで。",
+        hero_cta: "PROを購入",
+        hero_free: "無料で試す",
+        features_title: "必要なものすべて",
+        feature_1_title: "スマートリダイレクト",
+        feature_1_desc: "カスタムURLプレフィックスとリンクマスキングを備えた301、302、307リダイレクト。",
+        feature_2_title: "ショートコードブロック",
+        feature_2_desc: "シンプルなショートコードでHTML、JavaScript、CSSをどこにでも埋め込み。",
+        feature_3_title: "クリック追跡",
+        feature_3_desc: "IP、ユーザーエージェント、リファラーを記録してすべてのクリックを監視。",
+        feature_4_title: "パスワード保護",
+        feature_4_desc: "機密リンクをパスワードで保護。PRO機能。",
+        feature_5_title: "10言語対応",
+        feature_5_desc: "日本語、英語、ロシア語、ドイツ語、フランス語、スペイン語、イタリア語、中国語、ポルトガル語、韓国語に完全翻訳。",
+        feature_6_title: "一括編集とCSV",
+        feature_6_desc: "複数のリンクを一度に編集。自動バックアップ付きCSVインポート/エクスポート。PRO機能。",
+        pricing_title: "プランを選択",
+        pricing_subtitle: "一度きりの支払い。サブスクリプションなし。生涯アップデート。",
+        plan_monthly: "月額",
+        plan_yearly: "年額",
+        plan_lifetime: "生涯",
+        popular: "一番人気",
+        save: "50%節約",
+        btn_buy: "購入する",
+        comparison_title: "Free vs PRO",
+        comp_feature: "機能",
+        comp_links: "リンク",
+        comp_shortcodes: "ショートコード",
+        comp_batch: "一括編集",
+        comp_csv: "CSVインポート/エクスポート",
+        comp_password: "パスワード保護",
+        comp_price: "価格",
+        faq_title: "よくある質問",
+        faq_1_q: "PROを有効化するには？",
+        faq_1_a: "購入後、ライセンスキーがメールで届きます。WordPress管理画面 → Link Forge → 設定 → 有効化に入力してください。",
+        faq_2_q: "月額から生涯プランにアップグレードできますか？",
+        faq_2_a: "はい！いつでも生涯プランを購入できます。新しいキーが古いキーを置き換えます。",
+        faq_3_q: "ライセンスは1サイトのみですか？",
+        faq_3_a: "はい、1ライセンス = 1WordPressサイトです。さらに必要ですか？追加ライセンスを購入してください。",
+        faq_4_q: "無料版はどこで入手できますか？",
+        faq_4_a: "WordPress.orgプラグインリポジトリからダウンロードするか、WordPress管理画面から直接インストールしてください。",
+        modal_title: "購入を完了",
+        modal_email: "ライセンスキー受信用メール",
+        modal_pay: "カードで支払う",
+        footer_rights: "全著作権所有。"
+    },
+    pt: {
+        hero_badge: "Plugin WordPress",
+        hero_title: "Crie links e shortcodes poderosos",
+        hero_desc: "Redirecionamentos rastreáveis, mascaramento de URL, incorporação de código e proteção por senha – tudo em um painel poderoso.",
+        hero_cta: "Comprar PRO",
+        hero_free: "Testar grátis",
+        features_title: "Tudo o que você precisa",
+        feature_1_title: "Redirecionamentos inteligentes",
+        feature_1_desc: "Redirecionamentos 301, 302, 307 com prefixos de URL personalizados e mascaramento de links.",
+        feature_2_title: "Blocos de shortcode",
+        feature_2_desc: "Incorpore HTML, JavaScript ou CSS em qualquer lugar com shortcodes simples.",
+        feature_3_title: "Rastreamento de cliques",
+        feature_3_desc: "Monitore cada clique com registro de IP, user-agent e referenciador.",
+        feature_4_title: "Proteção por senha",
+        feature_4_desc: "Proteja links sensíveis com senhas. Função PRO.",
+        feature_5_title: "10 idiomas",
+        feature_5_desc: "Totalmente traduzido para português, inglês, russo, alemão, francês, espanhol, italiano, chinês, japonês, coreano.",
+        feature_6_title: "Edição em lote e CSV",
+        feature_6_desc: "Edite vários links de uma vez. Importar/exportar CSV com backup automático. Função PRO.",
+        pricing_title: "Escolha seu plano",
+        pricing_subtitle: "Pagamento único. Sem assinaturas. Atualizações vitalícias.",
+        plan_monthly: "Mensal",
+        plan_yearly: "Anual",
+        plan_lifetime: "Vitalício",
+        popular: "Mais popular",
+        save: "Economize 50%",
+        btn_buy: "Comprar",
+        comparison_title: "Free vs PRO",
+        comp_feature: "Funcionalidade",
+        comp_links: "Links",
+        comp_shortcodes: "Shortcodes",
+        comp_batch: "Edição em lote",
+        comp_csv: "Importar/Exportar CSV",
+        comp_password: "Proteção por senha",
+        comp_price: "Preço",
+        faq_title: "Perguntas frequentes",
+        faq_1_q: "Como ativar o PRO?",
+        faq_1_a: "Após a compra, você receberá uma chave de licença por email. Insira em admin WordPress → Link Forge → Configurações → Ativar.",
+        faq_2_q: "Posso fazer upgrade de mensal para vitalício?",
+        faq_2_a: "Sim! Compre o plano vitalício a qualquer momento. Sua nova chave substituirá a antiga.",
+        faq_3_q: "A licença é para um único site?",
+        faq_3_a: "Sim, uma licença = um site WordPress. Precisa de mais? Compre licenças adicionais.",
+        faq_4_q: "Onde obtenho a versão gratuita?",
+        faq_4_a: "Baixe do repositório WordPress.org ou instale diretamente do seu admin WordPress.",
+        modal_title: "Concluir compra",
+        modal_email: "Email para entrega da chave de licença",
+        modal_pay: "Pagar com cartão",
+        footer_rights: "Todos os direitos reservados."
+    },
+    ko: {
+        hero_badge: "WordPress 플러그인",
+        hero_title: "강력한 링크와 숏코드 생성",
+        hero_desc: "추적 가능한 리디렉션, URL 숨김, 코드 삽입 및 비밀번호 보호 – 모든 것을 하나의 강력한 대시보드에서.",
+        hero_cta: "PRO 구매",
+        hero_free: "무료 체험",
+        features_title: "필요한 모든 것",
+        feature_1_title: "스마트 리디렉션",
+        feature_1_desc: "사용자 정의 URL 접두사와 링크 마스킹이 포함된 301, 302, 307 리디렉션.",
+        feature_2_title: "숏코드 블록",
+        feature_2_desc: "간단한 숏코드로 HTML, JavaScript 또는 CSS를 어디에나 삽입.",
+        feature_3_title: "클릭 추적",
+        feature_3_desc: "IP, user-agent, referrer를 기록하여 모든 클릭을 모니터링.",
+        feature_4_title: "비밀번호 보호",
+        feature_4_desc: "비밀번호로 민감한 링크를 보호. PRO 기능.",
+        feature_5_title: "10개 언어",
+        feature_5_desc: "한국어, 영어, 러시아어, 독일어, 프랑스어, 스페인어, 이탈리아어, 중국어, 일본어, 포르투갈어로 완전 번역.",
+        feature_6_title: "일괄 편집 및 CSV",
+        feature_6_desc: "여러 링크를 한 번에 편집. 자동 백업으로 CSV 가져오기/내보내기. PRO 기능.",
+        pricing_title: "플랜 선택",
+        pricing_subtitle: "일회성 결제. 구독 없음. 평생 업데이트.",
+        plan_monthly: "월간",
+        plan_yearly: "연간",
+        plan_lifetime: "평생",
+        popular: "가장 인기",
+        save: "50% 절약",
+        btn_buy: "구매하기",
+        comparison_title: "Free vs PRO",
+        comp_feature: "기능",
+        comp_links: "링크",
+        comp_shortcodes: "숏코드",
+        comp_batch: "일괄 편집",
+        comp_csv: "CSV 가져오기/내보내기",
+        comp_password: "비밀번호 보호",
+        comp_price: "가격",
+        faq_title: "자주 묻는 질문",
+        faq_1_q: "PRO를 어떻게 활성화하나요?",
+        faq_1_a: "구매 후 라이선스 키를 이메일로 받게 됩니다. WordPress 관리자 → Link Forge → 설정 → 활성화에 입력하세요.",
+        faq_2_q: "월간에서 평생으로 업그레이드할 수 있나요?",
+        faq_2_a: "네! 언제든지 평생 플랜을 구매할 수 있습니다. 새 키가 기존 키를 대체합니다.",
+        faq_3_q: "라이선스는 하나의 사이트에만 해당되나요?",
+        faq_3_a: "네, 하나의 라이선스 = 하나의 WordPress 사이트입니다. 더 필요하시면 추가 라이선스를 구매하세요.",
+        faq_4_q: "무료 버전은 어디서 받을 수 있나요?",
+        faq_4_a: "WordPress.org 플러그인 저장소에서 다운로드하거나 WordPress 관리자에서 직접 설치하세요.",
+        modal_title: "구매 완료",
+        modal_email: "라이선스 키 수신 이메일",
+        modal_pay: "카드로 결제",
+        footer_rights: "모든 권리 보유."
     }
-    
-    const t = FORGE_TRANSLATIONS[currentLang] || FORGE_TRANSLATIONS['en'];
-    const planNames = {
-        monthly: t.plan_monthly,
-        yearly: t.plan_yearly,
-        lifetime: t.plan_lifetime
-    };
-    
-    document.getElementById('modal-plan-name').textContent = planNames[plan];
-    document.getElementById('modal-price').textContent = `${planPrice} — Link Forge PRO (${planNames[plan]})`;
-    document.getElementById('payment-modal').classList.add('open');
-    document.getElementById('email').focus();
-}
-
-function closeModal() {
-    document.getElementById('payment-modal').classList.remove('open');
-}
-
-async function submitPayment(e) {
-    e.preventDefault();
-    
-    const email = document.getElementById('email').value;
-    const btn = e.target.querySelector('button');
-    const originalText = btn.textContent;
-    
-    if (!email) return;
-    
-    btn.textContent = '⏳ Processing...';
-    btn.disabled = true;
-    
-    try {
-        const response = await fetch('https://bitcoins-mining.net/link-forge-api/create-payment.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, plan: selectedPlan })
-        });
-        
-        const data = await response.json();
-        
-        if (data.success) {
-            window.location.href = data.payment_url;
-        } else {
-            alert('Payment error. Please try again or contact support.');
-            btn.textContent = originalText;
-            btn.disabled = false;
-        }
-    } catch (err) {
-        alert('Network error. Please check your connection and try again.');
-        btn.textContent = originalText;
-        btn.disabled = false;
-    }
-}
-
-// ================================================================
-// MODAL CLOSE
-// ================================================================
-
-document.getElementById('payment-modal').addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
-});
-
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeModal();
-});
-
-// ================================================================
-// SMOOTH SCROLL
-// ================================================================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-});
-
-// ================================================================
-// INIT
-// ================================================================
-
-document.addEventListener('DOMContentLoaded', function() {
-    const lang = detectLang();
-    document.getElementById('lang-select').value = lang;
-    applyTranslations(lang);
-});
+};

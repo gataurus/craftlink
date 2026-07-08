@@ -1,0 +1,16 @@
+{
+    "name": "Link Forge PRO",
+    "short_name": "Link Forge",
+    "description": "Forge powerful links and blocks for WordPress",
+    "start_url": "/link-forge/",
+    "display": "standalone",
+    "background_color": "#0f0f0f",
+    "theme_color": "#f97316",
+    "icons": [
+        {
+            "src": "img/logo.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}

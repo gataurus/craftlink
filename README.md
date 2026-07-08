@@ -2,7 +2,7 @@
 
 **Forge powerful links and blocks. Redirect, track, cloak, manage URLs, and embed HTML/JS/CSS snippets — all from one powerful dashboard.**
 
-[![Version](https://img.shields.io/badge/version-1.3.1-blue.svg)](https://github.com/gataurus/link-forge)
+[![Version](https://img.shields.io/badge/version-1.5.0-blue.svg)](https://github.com/gataurus/link-forge)
 [![License](https://img.shields.io/badge/license-GPL%20v2-green.svg)](LICENSE)
 [![PHP](https://img.shields.io/badge/PHP-7.2+-purple.svg)](https://php.net)
 [![WordPress](https://img.shields.io/badge/WordPress-5.0+-blue.svg)](https://wordpress.org)
@@ -23,16 +23,17 @@ Link Forge is a comprehensive WordPress plugin for managing redirect links and s
 - 🔄 301, 302, 307 redirects
 - 🎯 Custom URL prefixes
 - 🔒 Password-protected links (PRO)
-- 📊 Click tracking with counter
-- 📋 Bulk actions (activate, deactivate, delete)
+- 📊 Click tracking with counter and detailed logs (IP, user-agent, referrer)
+- 📋 Bulk actions (delete, toggle, export, change category)
 - 🔍 Live search and category filtering
-- 📱 Responsive management table
+- 📱 Responsive management table with infinite scroll
 
 ### Shortcode Blocks
 - 🧱 Embed HTML, JavaScript, or CSS anywhere
 - 💻 `[forge block="slug"]` shortcode
 - 📂 Organize with categories and tags
 - ⚡ Lightweight execution
+- 🖊️ Editor button for quick insertion (Classic + Gutenberg)
 
 ### Internationalization
 - 🌍 10 Languages supported
@@ -53,6 +54,7 @@ Link Forge is a comprehensive WordPress plugin for managing redirect links and s
 - 📝 RTL support
 - 📋 One-click copy to clipboard
 - 🎨 Modern, intuitive interface
+- 🔑 License activation system
 
 ---
 
@@ -84,7 +86,9 @@ Link Forge is a comprehensive WordPress plugin for managing redirect links and s
 | Custom URL Prefix | Global | Per-link |
 | Batch Edit | ❌ | ✅ |
 | CSV Import/Export | ❌ | ✅ |
-| Price | **Free** | **$19/year** |
+| Price | **Free** | **From $4.99** |
+
+[🔓 Upgrade to PRO](https://gataurus.github.io/link-forge)
 
 ---
 
@@ -101,6 +105,20 @@ Link Forge speaks your language! Available in:
 - 🇯🇵 Japanese
 - 🇧🇷 Portuguese (Brazil)
 - 🇰🇷 Korean
+
+---
+
+## 📄 Documentation
+
+- [Privacy Policy](https://gataurus.github.io/link-forge/docs/policy.html)
+- [Public Offer](https://gataurus.github.io/link-forge/docs/offer.html)
+- [Refund Policy](https://gataurus.github.io/link-forge/docs/refund.html)
+
+---
+
+## 📧 Support
+
+Need help? Contact us at [linkforge.support@gmail.com](mailto:linkforge.support@gmail.com)
 
 ---
 

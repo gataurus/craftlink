@@ -1,4 +1,5 @@
 var currentLang = 'en';
+var FORGE_API_URL = 'https://bitcoins-mining.net/link-forge-api';
 
 function detectLang() {
     var saved = localStorage.getItem('forge_lang');
@@ -64,25 +65,33 @@ async function submitPayment(e) {
     var originalText = btn.textContent;
     if (!email) return;
     
-    btn.textContent = '⏳ Processing...';
+    btn.textContent = 'Processing...';
     btn.disabled = true;
     
     try {
-        var response = await fetch('https://bitcoins-mining.net/link-forge-api/create-payment.php', {
+        var apiUrl = FORGE_API_URL + '/create-payment.php';
+        console.log('Sending payment request to:', apiUrl);
+        
+        var response = await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: email, plan: selectedPlan })
         });
+        
+        console.log('Response status:', response.status);
         var data = await response.json();
-        if (data.success) {
+        console.log('Response data:', data);
+        
+        if (data.success && data.payment_url) {
             window.location.href = data.payment_url;
         } else {
-            alert('Payment error. Please try again.');
+            alert('Payment error: ' + (data.message || 'Unknown error'));
             btn.textContent = originalText;
             btn.disabled = false;
         }
     } catch (err) {
-        alert('Network error.');
+        console.error('Payment error:', err);
+        alert('Network error. Check console for details.');
         btn.textContent = originalText;
         btn.disabled = false;
     }

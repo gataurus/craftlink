@@ -5,49 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link Forge PRO — WordPress Plugin</title>
     <meta name="description" content="Professional link management and shortcode plugin for WordPress. Redirect, track, cloak URLs, and embed code snippets.">
-    
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="apple-touch-icon" sizes="512x512" href="img/icon-512x512.png">
     <link rel="manifest" href="site.webmanifest">
-    
     <meta name="theme-color" content="#1c1917">
     <meta name="msapplication-TileColor" content="#f97316">
-    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- HEADER -->
     <header class="header">
         <div class="container">
-            <a href="/link-forge" class="logo">
-                <span class="logo-icon">⚒️</span>
-                <span class="logo-text">Link Forge</span>
-            </a>
+            <a href="/link-forge" class="logo"><span class="logo-icon">⚒️</span><span class="logo-text">Link Forge</span></a>
             <nav class="nav">
-                <a href="#how-it-works">How It Works</a>
-                <a href="#features">Features</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#faq">FAQ</a>
+                <a href="#how-it-works" data-i18n="nav_how">How It Works</a>
+                <a href="#features" data-i18n="nav_features">Features</a>
+                <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+                <a href="#faq" data-i18n="nav_faq">FAQ</a>
                 <div class="lang-switcher">
                     <select id="lang-select" onchange="changeLang(this.value)">
-                        <option value="en">EN</option>
-                        <option value="ru">RU</option>
-                        <option value="de">DE</option>
-                        <option value="fr">FR</option>
-                        <option value="es">ES</option>
-                        <option value="it">IT</option>
-                        <option value="zh">ZH</option>
-                        <option value="ja">JA</option>
-                        <option value="pt">PT</option>
-                        <option value="ko">KO</option>
+                        <option value="en">EN</option><option value="ru">RU</option><option value="de">DE</option><option value="fr">FR</option><option value="es">ES</option><option value="it">IT</option><option value="zh">ZH</option><option value="ja">JA</option><option value="pt">PT</option><option value="ko">KO</option>
                     </select>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -63,61 +46,25 @@
                 <div class="hero-preview">
                     <div class="preview-url">yoursite.com/go/sale</div>
                     <div class="preview-arrow">→</div>
-                    <div class="preview-url target">shop.com/checkout</div>
+                    <div class="preview-url target">yoursite.com/shop/checkout</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- HOW IT WORKS -->
-<section id="how-it-works" class="how-it-works">
-    <div class="container">
-        <div class="section-header">
-            <h2 data-i18n="how_title">How It Works</h2>
-            <p class="section-subtitle" data-i18n="how_subtitle">Two simple tools that solve real problems.</p>
-        </div>
-        <div class="how-blocks">
-            <!-- Links -->
-            <div class="how-block">
-                <div class="how-icon">🔗</div>
-                <div class="how-content">
-                    <h3 data-i18n="how_links_title">Link Management</h3>
-                    <p data-i18n="how_links_desc">You have a long, ugly affiliate link or a complicated URL. Link Forge creates a short, clean version on your own domain — like yoursite.com/go/sale. When someone clicks it, they're instantly redirected to the original URL. You can track clicks, protect with a password, or disable the link anytime. You can also remove the prefix entirely for even shorter links — yoursite.com/sale.</p>
-                    <div class="how-example">
-                        <span class="how-label" data-i18n="how_example_before">Before:</span>
-                        <span class="how-code">https://shop.com/ref?id=123&utm=abc</span>
-                        <span class="how-label" data-i18n="how_example_after">After (with prefix):</span>
-                        <span class="how-code highlight">yoursite.com/go/sale</span>
-                        <span class="how-label" data-i18n="how_example_no_prefix">After (no prefix):</span>
-                        <span class="how-code highlight">yoursite.com/sale</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Shortcodes -->
-            <div class="how-block">
-                <div class="how-icon">🧱</div>
-                <div class="how-content">
-                    <h3 data-i18n="how_blocks_title">Shortcode Blocks</h3>
-                    <p data-i18n="how_blocks_desc">Need to add custom HTML, JavaScript, or CSS to specific pages? Instead of editing theme files, create a named block in Link Forge and paste a simple shortcode like [forge block="analytics"] anywhere — in posts, pages, or widgets. Edit the code once, and it updates everywhere.</p>
-                    <div class="how-example">
-                        <span class="how-label" data-i18n="how_example_block">Shortcode:</span>
-                        <span class="how-code highlight">[forge block="my-code"]</span>
-                        <span class="how-label" data-i18n="how_example_result">Result:</span>
-                        <span class="how-code">Your HTML/JS/CSS appears here</span>
-                    </div>
-                </div>
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header"><h2 data-i18n="how_title">How It Works</h2><p class="section-subtitle" data-i18n="how_subtitle">Two simple tools that solve real problems.</p></div>
+            <div class="how-blocks">
+                <div class="how-block"><div class="how-icon">🔗</div><div class="how-content"><h3 data-i18n="how_links_title">Link Management</h3><p data-i18n="how_links_desc">You have a long, ugly affiliate link or a complicated URL. Link Forge creates a short, clean version on your own domain — like yoursite.com/go/sale. When someone clicks it, they're instantly redirected to the original URL. You can track clicks, protect with a password, or disable the link anytime. You can also remove the prefix entirely for even shorter links — yoursite.com/sale.</p><div class="how-example"><span class="how-label" data-i18n="how_example_before">Before:</span><span class="how-code">https://shop.com/ref?id=123&utm=abc</span><span class="how-label" data-i18n="how_example_after">After (with prefix):</span><span class="how-code highlight">yoursite.com/go/sale</span><span class="how-label" data-i18n="how_example_no_prefix">After (no prefix):</span><span class="how-code highlight">yoursite.com/sale</span></div></div></div>
+                <div class="how-block"><div class="how-icon">🧱</div><div class="how-content"><h3 data-i18n="how_blocks_title">Shortcode Blocks</h3><p data-i18n="how_blocks_desc">Need to add custom HTML, JavaScript, or CSS to specific pages? Instead of editing theme files, create a named block in Link Forge and paste a simple shortcode like [forge block="analytics"] anywhere — in posts, pages, or widgets. Edit the code once, and it updates everywhere.</p><div class="how-example"><span class="how-label" data-i18n="how_example_block">Shortcode:</span><span class="how-code highlight">[forge block="my-code"]</span><span class="how-label" data-i18n="how_example_result">Result:</span><span class="how-code">Your HTML/JS/CSS appears here</span></div></div></div>
             </div>
         </div>
-    </div>
-</section>
-    
-    <!-- FEATURES -->
+    </section>
+
     <section id="features" class="features">
         <div class="container">
-            <div class="section-header">
-                <h2 data-i18n="features_title">Features</h2>
-            </div>
+            <div class="section-header"><h2 data-i18n="features_title">Features</h2></div>
             <div class="features-grid">
                 <div class="feature-card"><span class="feature-icon">🔄</span><h3 data-i18n="feature_1_title">Smart Redirects</h3><p data-i18n="feature_1_desc">301 (permanent), 302 (temporary), or 307 redirects. Custom prefixes per link. Default is /go/ — change it to /ref/, /dl/, or remove completely.</p></div>
                 <div class="feature-card"><span class="feature-icon">📊</span><h3 data-i18n="feature_2_title">Click Tracking</h3><p data-i18n="feature_2_desc">Every click is logged: timestamp, IP address, browser, device, and referrer. View stats in the dashboard. Reset counters anytime.</p></div>
@@ -129,84 +76,38 @@
         </div>
     </section>
 
-    <!-- PRICING -->
     <section id="pricing" class="pricing">
         <div class="container">
-            <div class="section-header">
-                <h2 data-i18n="pricing_title">Simple Pricing</h2>
-                <p class="section-subtitle" data-i18n="pricing_subtitle">One payment. No subscription traps. Use forever.</p>
-            </div>
+            <div class="section-header"><h2 data-i18n="pricing_title">Simple Pricing</h2><p class="section-subtitle" data-i18n="pricing_subtitle">One payment. No subscription traps. Use forever.</p></div>
             <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3 data-i18n="plan_monthly">Monthly</h3>
-                    <p class="pricing-desc" data-i18n="plan_monthly_desc">Try PRO risk-free</p>
-                    <div class="pricing-price"><span class="pricing-value" data-i18n="price_monthly">$4.99</span><span class="pricing-period" data-i18n="price_monthly_suffix">/mo</span></div>
-                    <ul class="pricing-features">
-                        <li>✓ <span data-i18n="p_feat_unlim_links">Unlimited links</span></li>
-                        <li>✓ <span data-i18n="p_feat_unlim_blocks">Unlimited shortcodes</span></li>
-                        <li>✓ <span data-i18n="p_feat_batch">Batch editing</span></li>
-                        <li>✓ <span data-i18n="p_feat_csv">CSV import & export</span></li>
-                        <li>✓ <span data-i18n="p_feat_pass">Password protection</span></li>
-                        <li>✓ <span data-i18n="p_feat_monthly">1 month of updates</span></li>
-                    </ul>
-                    <button class="btn btn-primary btn-block" onclick="buy('monthly')" data-i18n="btn_buy">Get Started</button>
-                </div>
-                <div class="pricing-card popular">
-                    <div class="popular-badge" data-i18n="popular">Best Value</div>
-                    <h3 data-i18n="plan_yearly">Yearly</h3>
-                    <p class="pricing-desc" data-i18n="plan_yearly_desc">Save 35% vs monthly</p>
-                    <div class="pricing-price"><span class="pricing-value" data-i18n="price_yearly">$29</span><span class="pricing-period" data-i18n="price_yearly_suffix">/yr</span></div>
-                    <ul class="pricing-features">
-                        <li>✓ <span data-i18n="p_feat_unlim_links">Unlimited links</span></li>
-                        <li>✓ <span data-i18n="p_feat_unlim_blocks">Unlimited shortcodes</span></li>
-                        <li>✓ <span data-i18n="p_feat_batch">Batch editing</span></li>
-                        <li>✓ <span data-i18n="p_feat_csv">CSV import & export</span></li>
-                        <li>✓ <span data-i18n="p_feat_pass">Password protection</span></li>
-                        <li>✓ <span data-i18n="p_feat_yearly">1 year of updates</span></li>
-                    </ul>
-                    <button class="btn btn-primary btn-block" onclick="buy('yearly')" data-i18n="btn_buy">Get Started</button>
-                </div>
-                <div class="pricing-card">
-                    <h3 data-i18n="plan_lifetime">Lifetime</h3>
-                    <p class="pricing-desc" data-i18n="plan_lifetime_desc">Pay once, own forever</p>
-                    <div class="pricing-price"><span class="pricing-value" data-i18n="price_lifetime">$79</span><span class="pricing-period" data-i18n="price_lifetime_suffix">/forever</span></div>
-                    <ul class="pricing-features">
-                        <li>✓ <span data-i18n="p_feat_unlim_links">Unlimited links</span></li>
-                        <li>✓ <span data-i18n="p_feat_unlim_blocks">Unlimited shortcodes</span></li>
-                        <li>✓ <span data-i18n="p_feat_batch">Batch editing</span></li>
-                        <li>✓ <span data-i18n="p_feat_csv">CSV import & export</span></li>
-                        <li>✓ <span data-i18n="p_feat_pass">Password protection</span></li>
-                        <li>✓ <span data-i18n="p_feat_lifetime">Lifetime updates</span></li>
-                    </ul>
-                    <button class="btn btn-primary btn-block" onclick="buy('lifetime')" data-i18n="btn_buy">Get Started</button>
-                </div>
+                <div class="pricing-card"><h3 data-i18n="plan_monthly">Monthly</h3><p class="pricing-desc" data-i18n="plan_monthly_desc">Try PRO risk-free</p><div class="pricing-price"><span class="pricing-value" data-i18n="price_monthly">$4.99</span><span class="pricing-period" data-i18n="price_monthly_suffix">/mo</span></div><ul class="pricing-features"><li>✓ <span data-i18n="p_feat_unlim_links">Unlimited links</span></li><li>✓ <span data-i18n="p_feat_unlim_blocks">Unlimited shortcodes</span></li><li>✓ <span data-i18n="p_feat_batch">Batch editing</span></li><li>✓ <span data-i18n="p_feat_csv">CSV import & export</span></li><li>✓ <span data-i18n="p_feat_pass">Password protection</span></li><li>✓ <span data-i18n="p_feat_monthly">1 month of updates</span></li></ul><button class="btn btn-primary btn-block" onclick="buy('monthly')" data-i18n="btn_buy">Get Started</button></div>
+                <div class="pricing-card popular"><div class="popular-badge" data-i18n="popular">Best Value</div><h3 data-i18n="plan_yearly">Yearly</h3><p class="pricing-desc" data-i18n="plan_yearly_desc">Save 35% vs monthly</p><div class="pricing-price"><span class="pricing-value" data-i18n="price_yearly">$29</span><span class="pricing-period" data-i18n="price_yearly_suffix">/yr</span></div><ul class="pricing-features"><li>✓ <span data-i18n="p_feat_unlim_links">Unlimited links</span></li><li>✓ <span data-i18n="p_feat_unlim_blocks">Unlimited shortcodes</span></li><li>✓ <span data-i18n="p_feat_batch">Batch editing</span></li><li>✓ <span data-i18n="p_feat_csv">CSV import & export</span></li><li>✓ <span data-i18n="p_feat_pass">Password protection</span></li><li>✓ <span data-i18n="p_feat_yearly">1 year of updates</span></li></ul><button class="btn btn-primary btn-block" onclick="buy('yearly')" data-i18n="btn_buy">Get Started</button></div>
+                <div class="pricing-card"><h3 data-i18n="plan_lifetime">Lifetime</h3><p class="pricing-desc" data-i18n="plan_lifetime_desc">Pay once, own forever</p><div class="pricing-price"><span class="pricing-value" data-i18n="price_lifetime">$79</span><span class="pricing-period" data-i18n="price_lifetime_suffix">/forever</span></div><ul class="pricing-features"><li>✓ <span data-i18n="p_feat_unlim_links">Unlimited links</span></li><li>✓ <span data-i18n="p_feat_unlim_blocks">Unlimited shortcodes</span></li><li>✓ <span data-i18n="p_feat_batch">Batch editing</span></li><li>✓ <span data-i18n="p_feat_csv">CSV import & export</span></li><li>✓ <span data-i18n="p_feat_pass">Password protection</span></li><li>✓ <span data-i18n="p_feat_lifetime">Lifetime updates</span></li></ul><button class="btn btn-primary btn-block" onclick="buy('lifetime')" data-i18n="btn_buy">Get Started</button></div>
             </div>
             <p class="pricing-guarantee" data-i18n="guarantee">14-day money-back guarantee. No questions asked.</p>
         </div>
     </section>
 
-    <!-- COMPARISON -->
     <section class="comparison">
         <div class="container">
             <div class="section-header"><h2 data-i18n="comparison_title">Free vs PRO</h2></div>
             <div class="comparison-table-wrap">
                 <table class="comparison-table">
-                    <thead><tr><th>Feature</th><th>Free</th><th>PRO</th></tr></thead>
+                    <thead><tr><th data-i18n="comp_feature">Feature</th><th data-i18n="comp_free">Free</th><th data-i18n="comp_pro">PRO</th></tr></thead>
                     <tbody>
-                        <tr><td data-i18n="comp_links">Links</td><td>20</td><td>Unlimited</td></tr>
-                        <tr><td data-i18n="comp_shortcodes">Shortcodes</td><td>20</td><td>Unlimited</td></tr>
-                        <tr><td data-i18n="comp_tracking">Click Tracking</td><td>Yes</td><td>Yes + logs</td></tr>
-                        <tr><td data-i18n="comp_password">Password Protection</td><td>—</td><td>Yes</td></tr>
-                        <tr><td data-i18n="comp_batch">Batch Edit</td><td>—</td><td>Yes</td></tr>
-                        <tr><td data-i18n="comp_csv">CSV Import/Export</td><td>—</td><td>Yes</td></tr>
-                        <tr><td data-i18n="comp_price">Price</td><td>Free</td><td>From $4.99</td></tr>
+                        <tr><td data-i18n="comp_links">Links</td><td data-i18n="comp_links_free">20</td><td data-i18n="comp_links_pro">Unlimited</td></tr>
+                        <tr><td data-i18n="comp_shortcodes">Shortcodes</td><td data-i18n="comp_shortcodes_free">20</td><td data-i18n="comp_shortcodes_pro">Unlimited</td></tr>
+                        <tr><td data-i18n="comp_tracking">Click Tracking</td><td data-i18n="comp_tracking_free">Basic counter</td><td data-i18n="comp_tracking_pro">Full logs & analytics</td></tr>
+                        <tr><td data-i18n="comp_password">Password Protection</td><td data-i18n="comp_password_free">—</td><td data-i18n="comp_password_pro">✓</td></tr>
+                        <tr><td data-i18n="comp_batch">Batch Edit</td><td data-i18n="comp_batch_free">—</td><td data-i18n="comp_batch_pro">✓</td></tr>
+                        <tr><td data-i18n="comp_csv">CSV Import/Export</td><td data-i18n="comp_csv_free">—</td><td data-i18n="comp_csv_pro">✓</td></tr>
+                        <tr><td data-i18n="comp_price">Price</td><td data-i18n="comp_price_free">Free</td><td data-i18n="comp_price_pro">From $4.99</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq" class="faq">
         <div class="container">
             <div class="section-header"><h2 data-i18n="faq_title">Frequently Asked Questions</h2></div>
@@ -223,7 +124,6 @@
         </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta">
         <div class="container">
             <h2 data-i18n="cta_title">Ready to Get Started?</h2>
@@ -232,13 +132,11 @@
         </div>
     </section>
 
-    <!-- MODAL -->
     <div id="payment-modal" class="modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal()">&times;</span>
             <h2 data-i18n="modal_title">Complete Your Purchase</h2>
-            <p id="modal-plan-name"></p>
-            <p id="modal-price"></p>
+            <p id="modal-plan-name"></p><p id="modal-price"></p>
             <form id="payment-form" onsubmit="submitPayment(event)">
                 <label for="email" data-i18n="modal_email">Email for license key delivery</label>
                 <input type="email" id="email" required placeholder="your@email.com">
@@ -248,15 +146,14 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <p>© 2026 Link Forge</p>
             <div class="footer-links">
-                <a href="docs/policy.html">Privacy</a>
-                <a href="docs/offer.html">Terms</a>
-                <a href="docs/refund.html">Refund</a>
-                <a href="mailto:linkforge.support@gmail.com">Support</a>
+                <a href="docs/policy.html" data-i18n="footer_privacy">Privacy</a>
+                <a href="docs/offer.html" data-i18n="footer_terms">Terms</a>
+                <a href="docs/refund.html" data-i18n="footer_refund">Refund</a>
+                <a href="mailto:linkforge.support@gmail.com" data-i18n="footer_support">Support</a>
             </div>
         </div>
     </footer>

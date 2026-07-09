@@ -52,8 +52,32 @@
         <div class="container">
             <div class="section-header"><h2 data-i18n="how_title">How It Works</h2><p class="section-subtitle" data-i18n="how_subtitle">Two simple tools that solve real problems.</p></div>
             <div class="how-blocks">
-                <div class="how-block"><div class="how-icon">🔗</div><div class="how-content"><h3 data-i18n="how_links_title">Link Management</h3><p data-i18n="how_links_desc">You have a long, ugly affiliate link or a complicated URL. Link Forge creates a short, clean version on your own domain — like yoursite.com/go/sale. When someone clicks it, they're instantly redirected to the original URL. You can track clicks, protect with a password, or disable the link anytime. You can also remove the prefix entirely for even shorter links — yoursite.com/sale.</p><div class="how-example"><span class="how-label" data-i18n="how_example_before">Before:</span><span class="how-code">https://shop.com/ref?id=123&utm=abc</span><span class="how-label" data-i18n="how_example_after">After (with prefix):</span><span class="how-code highlight">yoursite.com/go/sale</span><span class="how-label" data-i18n="how_example_no_prefix">After (no prefix):</span><span class="how-code highlight">yoursite.com/sale</span></div></div></div>
-                <div class="how-block"><div class="how-icon">🧱</div><div class="how-content"><h3 data-i18n="how_blocks_title">Shortcode Blocks</h3><p data-i18n="how_blocks_desc">Need to add custom HTML, JavaScript, or CSS to specific pages? Instead of editing theme files, create a named block in Link Forge and paste a simple shortcode like [forge block="analytics"] anywhere — in posts, pages, or widgets. Edit the code once, and it updates everywhere.</p><div class="how-example"><span class="how-label" data-i18n="how_example_block">Shortcode:</span><span class="how-code highlight">[forge block="my-code"]</span><span class="how-label" data-i18n="how_example_result">Result:</span><span class="how-code">Your HTML/JS/CSS appears here</span></div></div></div>
+                <div class="how-block">
+                    <div class="how-icon">🔗</div>
+                    <div class="how-content">
+                        <h3 data-i18n="how_links_title">Link Management</h3>
+                        <p data-i18n="how_links_desc">You have a long, ugly affiliate link or a complicated URL. Link Forge creates a short, clean version on your own domain. When someone clicks it, they're instantly redirected. Track clicks, protect with a password, or disable anytime — with or without a prefix.</p>
+                        <div class="how-example">
+                            <span class="how-code full">https://shop.com/ref?id=123&utm=abc</span>
+                            <span class="how-arrow">→</span>
+                            <span class="how-code highlight">yoursite.com/go/sale</span>
+                            <span class="how-label" data-i18n="how_or">or</span>
+                            <span class="how-code highlight">yoursite.com/sale</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="how-block">
+                    <div class="how-icon">🧱</div>
+                    <div class="how-content">
+                        <h3 data-i18n="how_blocks_title">Shortcode Blocks</h3>
+                        <p data-i18n="how_blocks_desc">Need custom HTML, JavaScript, or CSS on specific pages? Create a named block in Link Forge, paste the shortcode anywhere — posts, pages, widgets. Edit once, updates everywhere. Use the editor button for quick insertion without leaving the post editor.</p>
+                        <div class="how-example">
+                            <span class="how-code highlight">[forge block="my-code"]</span>
+                            <span class="how-arrow">→</span>
+                            <span class="how-code">Your HTML/JS/CSS appears here</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -62,12 +86,14 @@
         <div class="container">
             <div class="section-header"><h2 data-i18n="features_title">Features</h2></div>
             <div class="features-grid">
-                <div class="feature-card"><span class="feature-icon">🔄</span><h3 data-i18n="feature_1_title">Smart Redirects</h3><p data-i18n="feature_1_desc">301 (permanent), 302 (temporary), or 307 redirects. Custom prefixes per link. Default is /go/ — change it to /ref/, /dl/, or remove completely.</p></div>
-                <div class="feature-card"><span class="feature-icon">📊</span><h3 data-i18n="feature_2_title">Click Tracking</h3><p data-i18n="feature_2_desc">Every click is logged: timestamp, IP address, browser, device, and referrer. View stats in the dashboard. Reset counters anytime.</p></div>
-                <div class="feature-card"><span class="feature-icon">🔒</span><h3 data-i18n="feature_3_title">Password Protection</h3><p data-i18n="feature_3_desc">Protect any link with a password. Users see a clean password page before redirect. Perfect for private content. PRO feature.</p></div>
-                <div class="feature-card"><span class="feature-icon">🧱</span><h3 data-i18n="feature_4_title">Shortcode Blocks</h3><p data-i18n="feature_4_desc">Store HTML, JavaScript, or CSS snippets as named blocks. Insert anywhere with a shortcode. Edit once — updates everywhere.</p></div>
-                <div class="feature-card"><span class="feature-icon">📋</span><h3 data-i18n="feature_5_title">Batch Operations</h3><p data-i18n="feature_5_desc">Edit multiple links at once — change category, tags, or status. Export links to CSV, import with auto-backup. PRO feature.</p></div>
-                <div class="feature-card"><span class="feature-icon">🌍</span><h3 data-i18n="feature_6_title">10 Languages</h3><p data-i18n="feature_6_desc">Interface in English, Russian, German, French, Spanish, Italian, Chinese, Japanese, Portuguese, or Korean. Auto-detection.</p></div>
+                <div class="feature-card"><span class="feature-icon">🔄</span><h3 data-i18n="feature_1_title">Smart Redirects</h3><p data-i18n="feature_1_desc">301, 302, or 307 redirects with custom prefixes per link. Remove prefix entirely for short clean URLs.</p></div>
+                <div class="feature-card"><span class="feature-icon">📊</span><h3 data-i18n="feature_2_title">Click Tracking</h3><p data-i18n="feature_2_desc">Every click logged: time, IP, browser, device, referrer. View counters in dashboard.</p></div>
+                <div class="feature-card"><span class="feature-icon">🔒</span><h3 data-i18n="feature_3_title">Password Protection</h3><p data-i18n="feature_3_desc">Protect links with a password. Clean password page before redirect. PRO feature.</p></div>
+                <div class="feature-card"><span class="feature-icon">🧱</span><h3 data-i18n="feature_4_title">Shortcode Blocks</h3><p data-i18n="feature_4_desc">Store HTML/JS/CSS snippets. Insert anywhere via shortcode or editor button.</p></div>
+                <div class="feature-card"><span class="feature-icon">🔍</span><h3 data-i18n="feature_5_title">Live Search & Editor</h3><p data-i18n="feature_5_desc">Instant search across links and shortcodes. Insert with one click from the post editor.</p></div>
+                <div class="feature-card"><span class="feature-icon">📋</span><h3 data-i18n="feature_6_title">Batch Operations</h3><p data-i18n="feature_6_desc">Edit multiple links at once. CSV import/export with auto-backup. PRO feature.</p></div>
+                <div class="feature-card"><span class="feature-icon">🌍</span><h3 data-i18n="feature_7_title">10 Languages</h3><p data-i18n="feature_7_desc">Interface in 10 languages with auto-detection.</p></div>
+                <div class="feature-card"><span class="feature-icon">🎨</span><h3 data-i18n="feature_8_title">Modern UI</h3><p data-i18n="feature_8_desc">Clean, responsive dashboard with infinite scroll and real-time filtering.</p></div>
             </div>
         </div>
     </section>
@@ -87,19 +113,33 @@
     <section class="comparison">
         <div class="container">
             <div class="section-header"><h2 data-i18n="comparison_title">Free vs PRO</h2></div>
-            <div class="comparison-table-wrap">
-                <table class="comparison-table">
-                    <thead><tr><th data-i18n="comp_feature">Feature</th><th data-i18n="comp_free">Free</th><th data-i18n="comp_pro">PRO</th></tr></thead>
-                    <tbody>
-                        <tr><td data-i18n="comp_links">Links</td><td data-i18n="comp_links_free">20</td><td data-i18n="comp_links_pro">Unlimited</td></tr>
-                        <tr><td data-i18n="comp_shortcodes">Shortcodes</td><td data-i18n="comp_shortcodes_free">20</td><td data-i18n="comp_shortcodes_pro">Unlimited</td></tr>
-                        <tr><td data-i18n="comp_tracking">Click Tracking</td><td data-i18n="comp_tracking_free">Basic counter</td><td data-i18n="comp_tracking_pro">Basic counter</td></tr>
-                        <tr><td data-i18n="comp_password">Password Protection</td><td data-i18n="comp_password_free">—</td><td data-i18n="comp_password_pro">✓</td></tr>
-                        <tr><td data-i18n="comp_batch">Batch Edit</td><td data-i18n="comp_batch_free">—</td><td data-i18n="comp_batch_pro">✓</td></tr>
-                        <tr><td data-i18n="comp_csv">CSV Import/Export</td><td data-i18n="comp_csv_free">—</td><td data-i18n="comp_csv_pro">✓</td></tr>
-                        <tr><td data-i18n="comp_price">Price</td><td data-i18n="comp_price_free">Free</td><td data-i18n="comp_price_pro">From $4.99</td></tr>
-                    </tbody>
-                </table>
+            <div class="comparison-cards">
+                <div class="comparison-card">
+                    <div class="comparison-card-header free"><span>🆓</span> <strong>Free</strong></div>
+                    <ul>
+                        <li><span data-i18n="comp_links">Links</span><strong>20</strong></li>
+                        <li><span data-i18n="comp_shortcodes">Shortcodes</span><strong>20</strong></li>
+                        <li><span data-i18n="comp_tracking">Click Tracking</span><strong>Basic counter</strong></li>
+                        <li><span data-i18n="comp_password">Password</span><strong>—</strong></li>
+                        <li><span data-i18n="comp_batch">Batch Edit</span><strong>—</strong></li>
+                        <li><span data-i18n="comp_csv">CSV Import/Export</span><strong>—</strong></li>
+                        <li><span data-i18n="comp_search">Live Search & Editor</span><strong>✓</strong></li>
+                        <li><span data-i18n="comp_price">Price</span><strong>Free</strong></li>
+                    </ul>
+                </div>
+                <div class="comparison-card popular">
+                    <div class="comparison-card-header pro"><span>⚡</span> <strong>PRO</strong></div>
+                    <ul>
+                        <li><span data-i18n="comp_links">Links</span><strong>Unlimited</strong></li>
+                        <li><span data-i18n="comp_shortcodes">Shortcodes</span><strong>Unlimited</strong></li>
+                        <li><span data-i18n="comp_tracking">Click Tracking</span><strong>Basic counter</strong></li>
+                        <li><span data-i18n="comp_password">Password</span><strong>✓</strong></li>
+                        <li><span data-i18n="comp_batch">Batch Edit</span><strong>✓</strong></li>
+                        <li><span data-i18n="comp_csv">CSV Import/Export</span><strong>✓</strong></li>
+                        <li><span data-i18n="comp_search">Live Search & Editor</span><strong>✓</strong></li>
+                        <li><span data-i18n="comp_price">Price</span><strong>From $4.99</strong></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -109,13 +149,13 @@
             <div class="section-header"><h2 data-i18n="faq_title">Frequently Asked Questions</h2></div>
             <div class="faq-grid">
                 <details><summary data-i18n="faq_1_q">How do I activate PRO?</summary><p data-i18n="faq_1_a">After purchase, you'll receive a license key by email. Go to WordPress admin → Link Forge → Settings, paste the key, click Activate. Done.</p></details>
-                <details><summary data-i18n="faq_2_q">Can I upgrade later?</summary><p data-i18n="faq_2_a">Yes. Purchase a higher plan anytime. The new key replaces the old one immediately.</p></details>
-                <details><summary data-i18n="faq_3_q">One license per site?</summary><p data-i18n="faq_3_a">Yes, one license = one domain. Need more sites? Buy additional licenses.</p></details>
-                <details><summary data-i18n="faq_4_q">How do links work?</summary><p data-i18n="faq_4_a">You create a key (like "sale") and a target URL. The plugin creates yoursite.com/go/sale — anyone who visits it is redirected to the target. You can track clicks or protect with a password.</p></details>
-                <details><summary data-i18n="faq_5_q">How do shortcodes work?</summary><p data-i18n="faq_5_a">Create a block with a title and your code. Use the shortcode [forge block="title"] in any post or page. Edit the block once — it changes everywhere.</p></details>
-                <details><summary data-i18n="faq_6_q">What happens when license expires?</summary><p data-i18n="faq_6_a">PRO features stop. Existing links keep working. You can't create new ones beyond the free limit until renewal.</p></details>
-                <details><summary data-i18n="faq_7_q">Do you offer refunds?</summary><p data-i18n="faq_7_a">Yes, 14-day money-back guarantee. Email us — we'll refund, no questions asked.</p></details>
-                <details><summary data-i18n="faq_8_q">Can I use custom prefixes?</summary><p data-i18n="faq_8_a">Yes. Free: one global prefix (like /go/). PRO: individual prefixes per link or no prefix at all.</p></details>
+                <details><summary data-i18n="faq_2_q">I didn't receive my license key</summary><p data-i18n="faq_2_a">The email is sent immediately after payment. Please check your spam/junk folder first. If it's not there, contact us at linkforge.support@gmail.com and we'll resend it within 24 hours.</p></details>
+                <details><summary data-i18n="faq_3_q">Can I upgrade later?</summary><p data-i18n="faq_3_a">Yes. Purchase a higher plan anytime. The new key replaces the old one immediately.</p></details>
+                <details><summary data-i18n="faq_4_q">One license per site?</summary><p data-i18n="faq_4_a">Yes, one license = one domain. Need more sites? Buy additional licenses.</p></details>
+                <details><summary data-i18n="faq_5_q">How do links work?</summary><p data-i18n="faq_5_a">You create a key (like "sale") and a target URL. The plugin creates yoursite.com/go/sale — anyone who visits it is redirected. Track clicks or protect with a password.</p></details>
+                <details><summary data-i18n="faq_6_q">How do shortcodes work?</summary><p data-i18n="faq_6_a">Create a block with a title and your code. Use [forge block="title"] in any post or page. Edit once — changes everywhere. Or use the editor button for one-click insertion.</p></details>
+                <details><summary data-i18n="faq_7_q">What happens when license expires?</summary><p data-i18n="faq_7_a">PRO features stop. Existing links keep working. You can't create new ones beyond the free limit until renewal.</p></details>
+                <details><summary data-i18n="faq_8_q">Do you offer refunds?</summary><p data-i18n="faq_8_a">Yes, 14-day money-back guarantee. Email us — we'll refund, no questions asked.</p></details>
             </div>
         </div>
     </section>

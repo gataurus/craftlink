@@ -4,18 +4,27 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
       
-      - name: Replace API URL
-        run: |
-          sed -i "s|__FORGE_API_URL__|${{ secrets.FORGE_API_URL }}|g" js/main.js
+      - name: Replace API URL placeholder
+        run: sed -i "s|__FORGE_API_URL__|${{ secrets.FORGE_API_URL }}|g" js/main.js
       
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
+          publish_branch: main
+          force_orphan: false
+          allow_empty_commit: true

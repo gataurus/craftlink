@@ -1,5 +1,5 @@
 var currentLang = 'en';
-var FORGE_API_URL = 'https://bitcoins-mining.net/link-forge-api';
+var FORGE_API_URL = '__FORGE_API_URL__';
 
 function detectLang() {
     var saved = localStorage.getItem('forge_lang');

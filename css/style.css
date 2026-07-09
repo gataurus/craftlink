@@ -1,5 +1,5 @@
 /* ================================================================
-   Link Forge PRO — Landing Page Styles v3
+   Link Forge PRO — Landing Page Styles
    ================================================================ */
 
 :root {
@@ -71,16 +71,18 @@ body {
 
 /* How It Works */
 .how-it-works { padding: 80px 0; background: var(--surface); }
-.how-blocks { display: flex; flex-direction: column; gap: 32px; max-width: 800px; margin: 0 auto; }
+.how-blocks { display: flex; flex-direction: column; gap: 24px; }
 .how-block { display: flex; gap: 24px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
 .how-icon { font-size: 40px; flex-shrink: 0; width: 60px; height: 60px; background: var(--orange-bg); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; }
 .how-content { flex: 1; }
 .how-content h3 { font-size: 1.2em; font-weight: 700; margin-bottom: 8px; }
 .how-content p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px; }
-.how-example { display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; align-items: center; }
-.how-label { font-size: 12px; color: var(--text-muted); text-align: right; }
-.how-code { display: block; font-family: monospace; font-size: 12px; background: var(--surface2); padding: 8px 12px; border-radius: 4px; color: var(--text-secondary); word-break: break-all; }
+.how-example { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.how-code.full { flex: 0 0 auto; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.how-code { font-family: monospace; font-size: 12px; background: var(--surface2); padding: 8px 12px; border-radius: 4px; color: var(--text-secondary); }
 .how-code.highlight { background: var(--orange-bg); color: var(--orange); border: 1px solid var(--orange-light); }
+.how-arrow { color: var(--orange); font-size: 18px; font-weight: 700; }
+.how-label { font-size: 12px; color: var(--text-muted); font-style: italic; }
 
 /* Features */
 .features { padding: 80px 0; }
@@ -106,15 +108,19 @@ body {
 .pricing-features li { padding: 5px 0; font-size: 13px; color: var(--text-secondary); }
 .pricing-guarantee { text-align: center; margin-top: 24px; color: var(--text-muted); font-size: 13px; }
 
-/* Comparison */
+/* Comparison Cards */
 .comparison { padding: 80px 0; }
-.comparison-table-wrap { max-width: 700px; margin: 0 auto; overflow-x: auto; }
-.comparison-table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-.comparison-table th, .comparison-table td { padding: 12px 18px; font-size: 13px; }
-.comparison-table th { background: var(--surface2); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px; text-align: left; }
-.comparison-table th:last-child, .comparison-table td:last-child { text-align: center; color: var(--orange); font-weight: 600; }
-.comparison-table td { border-top: 1px solid var(--border); }
-.comparison-table td:first-child { color: var(--text); }
+.comparison-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 700px; margin: 0 auto; }
+.comparison-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.comparison-card.popular { border-color: var(--orange); }
+.comparison-card-header { padding: 16px 20px; font-size: 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border); }
+.comparison-card-header.free { background: var(--surface2); color: var(--text-muted); }
+.comparison-card-header.pro { background: var(--orange-bg); color: var(--orange); }
+.comparison-card ul { list-style: none; padding: 0; margin: 0; }
+.comparison-card li { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-secondary); }
+.comparison-card li:last-child { border-bottom: none; }
+.comparison-card li strong { color: var(--text); font-weight: 600; }
+.comparison-card.popular li strong { color: var(--orange); }
 
 /* FAQ */
 .faq { padding: 80px 0; background: var(--surface); }
@@ -162,116 +168,8 @@ body {
     .features-grid { grid-template-columns: 1fr; }
     .pricing-grid { grid-template-columns: 1fr; max-width: 380px; }
     .how-block { flex-direction: column; }
+    .comparison-cards { grid-template-columns: 1fr; }
+    .how-example { flex-direction: column; align-items: flex-start; }
+    .how-code.full { max-width: 100%; }
     .nav a { display: none; }
-}
-
-/* How It Works — примеры в строку со стрелками */
-.how-example {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 14px;
-}
-.how-code.full {
-    flex: 0 0 auto;
-    max-width: 280px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.how-code {
-    font-family: monospace;
-    font-size: 12px;
-    background: var(--surface2);
-    padding: 8px 12px;
-    border-radius: 4px;
-    color: var(--text-secondary);
-}
-.how-code.highlight {
-    background: var(--orange-bg);
-    color: var(--orange);
-    border: 1px solid var(--orange-light);
-}
-.how-arrow {
-    color: var(--orange);
-    font-size: 18px;
-    font-weight: 700;
-}
-.how-label {
-    font-size: 12px;
-    color: var(--text-muted);
-    font-style: italic;
-}
-
-/* Comparison Cards */
-.comparison-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-.comparison-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-}
-.comparison-card.popular {
-    border-color: var(--orange);
-}
-.comparison-card-header {
-    padding: 16px 20px;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-bottom: 1px solid var(--border);
-}
-.comparison-card-header.free {
-    background: var(--surface2);
-    color: var(--text-muted);
-}
-.comparison-card-header.pro {
-    background: var(--orange-bg);
-    color: var(--orange);
-}
-.comparison-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.comparison-card li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid var(--border);
-    font-size: 13px;
-    color: var(--text-secondary);
-}
-.comparison-card li:last-child {
-    border-bottom: none;
-}
-.comparison-card li strong {
-    color: var(--text);
-    font-weight: 600;
-}
-.comparison-card.popular li strong {
-    color: var(--orange);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    .comparison-cards {
-        grid-template-columns: 1fr;
-    }
-    .how-example {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .how-code.full {
-        max-width: 100%;
-    }
 }

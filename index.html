@@ -4,19 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link Forge PRO — WordPress Plugin</title>
-    <meta name="description" content="Forge powerful links and blocks. Redirect, track, cloak, manage URLs, and embed HTML/JS/CSS snippets.">
+    <meta name="description" content="Professional link management and shortcode plugin for WordPress. Redirect, track, cloak URLs, and embed code snippets.">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="apple-touch-icon" sizes="512x512" href="img/icon-512x512.png">
     <link rel="manifest" href="site.webmanifest">
     
-    <!-- PWA / Theme -->
     <meta name="theme-color" content="#1c1917">
     <meta name="msapplication-TileColor" content="#f97316">
     
-    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,21 +25,22 @@
                 <span class="logo-text">Link Forge</span>
             </a>
             <nav class="nav">
+                <a href="#how-it-works">How It Works</a>
                 <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#faq">FAQ</a>
                 <div class="lang-switcher">
                     <select id="lang-select" onchange="changeLang(this.value)">
-                        <option value="en">🇺🇸 EN</option>
-                        <option value="ru">🇷🇺 RU</option>
-                        <option value="de">🇩🇪 DE</option>
-                        <option value="fr">🇫🇷 FR</option>
-                        <option value="es">🇪🇸 ES</option>
-                        <option value="it">🇮🇹 IT</option>
-                        <option value="zh">🇨🇳 ZH</option>
-                        <option value="ja">🇯🇵 JA</option>
-                        <option value="pt">🇧🇷 PT</option>
-                        <option value="ko">🇰🇷 KO</option>
+                        <option value="en">EN</option>
+                        <option value="ru">RU</option>
+                        <option value="de">DE</option>
+                        <option value="fr">FR</option>
+                        <option value="es">ES</option>
+                        <option value="it">IT</option>
+                        <option value="zh">ZH</option>
+                        <option value="ja">JA</option>
+                        <option value="pt">PT</option>
+                        <option value="ko">KO</option>
                     </select>
                 </div>
             </nav>
@@ -53,21 +51,62 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="hero-badge" data-i18n="hero_badge">WordPress Plugin</span>
-                <h1 data-i18n="hero_title">Forge Powerful Links & Shortcodes</h1>
-                <p data-i18n="hero_desc">Create trackable redirect links, cloak URLs, embed custom code, and protect with passwords — all from one powerful dashboard.</p>
+                <span class="hero-badge">WordPress Plugin</span>
+                <h1 data-i18n="hero_title">Professional Link Management for WordPress</h1>
+                <p data-i18n="hero_desc">Create short, memorable links. Track every click. Protect with passwords. Embed custom code. All from one clean dashboard.</p>
                 <div class="hero-buttons">
-                    <a href="#pricing" class="btn btn-primary btn-lg" data-i18n="hero_cta">🚀 Get PRO Now</a>
-                    <a href="https://wordpress.org/plugins/link-forge" class="btn btn-outline btn-lg" data-i18n="hero_free">⬇️ Try Free Version</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="hero-stat"><span class="stat-number">10</span><span class="stat-label">Languages</span></div>
-                    <div class="hero-stat"><span class="stat-number">∞</span><span class="stat-label">PRO Links</span></div>
-                    <div class="hero-stat"><span class="stat-number">4.9</span><span class="stat-label">Rating</span></div>
+                    <a href="#pricing" class="btn btn-primary btn-lg" data-i18n="hero_cta">Get PRO Now</a>
+                    <a href="https://wordpress.org/plugins/link-forge" class="btn btn-outline btn-lg" data-i18n="hero_free">Try Free Version</a>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="hero-icon-bg">⚒️</div>
+                <div class="hero-preview">
+                    <div class="preview-url">yoursite.com/go/sale</div>
+                    <div class="preview-arrow">→</div>
+                    <div class="preview-url target">shop.com/checkout</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="how_title">How It Works</h2>
+                <p class="section-subtitle" data-i18n="how_subtitle">Two simple tools that solve real problems.</p>
+            </div>
+            
+            <div class="how-blocks">
+                <!-- Links -->
+                <div class="how-block">
+                    <div class="how-icon">🔗</div>
+                    <div class="how-content">
+                        <h3 data-i18n="how_links_title">Link Management</h3>
+                        <p data-i18n="how_links_desc">You have a long, ugly affiliate link or a complicated URL. Link Forge creates a short, clean version on your own domain — like <code>yoursite.com/go/sale</code>. When someone clicks it, they're instantly redirected to the original URL. You can track clicks, protect with a password, or disable the link anytime.</p>
+                        <div class="how-example">
+                            <span class="how-label" data-i18n="how_example_before">Before:</span>
+                            <code class="how-code">https://shop.com/ref?id=123&utm=abc</code>
+                            <span class="how-label" data-i18n="how_example_after">After:</span>
+                            <code class="how-code highlight">yoursite.com/go/sale</code>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shortcodes -->
+                <div class="how-block">
+                    <div class="how-icon">🧱</div>
+                    <div class="how-content">
+                        <h3 data-i18n="how_blocks_title">Shortcode Blocks</h3>
+                        <p data-i18n="how_blocks_desc">Need to add custom HTML, JavaScript, or CSS to specific pages? Instead of editing theme files, create a named block in Link Forge and paste a simple shortcode like <code>[forge block="analytics"]</code> anywhere — in posts, pages, or widgets. Edit the code once, and it updates everywhere.</p>
+                        <div class="how-example">
+                            <span class="how-label" data-i18n="how_example_block">Shortcode:</span>
+                            <code class="how-code highlight">[forge block="my-code"]</code>
+                            <span class="how-label" data-i18n="how_example_result">Result:</span>
+                            <code class="how-code">Your HTML/JS/CSS appears here</code>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -76,39 +115,38 @@
     <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <h2 data-i18n="features_title">Everything You Need</h2>
-                <p class="section-subtitle" data-i18n="features_subtitle">Professional tools for managing links and shortcodes — all in one plugin.</p>
+                <h2 data-i18n="features_title">Features</h2>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon-wrap">🔄</div>
+                    <div class="feature-icon">🔄</div>
                     <h3 data-i18n="feature_1_title">Smart Redirects</h3>
-                    <p data-i18n="feature_1_desc">301, 302, 307 redirects with custom URL prefixes and link masking.</p>
+                    <p data-i18n="feature_1_desc">301 (permanent), 302 (temporary), or 307 redirects. Custom prefixes per link. Default is /go/ — change it to /ref/, /dl/, or remove completely.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon-wrap">🧱</div>
-                    <h3 data-i18n="feature_2_title">Shortcode Blocks</h3>
-                    <p data-i18n="feature_2_desc">Embed HTML, JavaScript, or CSS anywhere with simple shortcodes. Editor button included.</p>
+                    <div class="feature-icon">📊</div>
+                    <h3 data-i18n="feature_2_title">Click Tracking</h3>
+                    <p data-i18n="feature_2_desc">Every click is logged: timestamp, IP address, browser, device, and referrer. View stats in the dashboard. Reset counters anytime.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon-wrap">📊</div>
-                    <h3 data-i18n="feature_3_title">Click Tracking</h3>
-                    <p data-i18n="feature_3_desc">Monitor every click with IP, user-agent, and referrer logging. Detailed analytics.</p>
+                    <div class="feature-icon">🔒</div>
+                    <h3 data-i18n="feature_3_title">Password Protection</h3>
+                    <p data-i18n="feature_3_desc">Protect any link with a password. Users see a clean password page before redirect. Perfect for private content. PRO feature.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon-wrap">🔒</div>
-                    <h3 data-i18n="feature_4_title">Password Protection</h3>
-                    <p data-i18n="feature_4_desc">Secure sensitive links with passwords. Beautiful password page for users. PRO feature.</p>
+                    <div class="feature-icon">🧱</div>
+                    <h3 data-i18n="feature_4_title">Shortcode Blocks</h3>
+                    <p data-i18n="feature_4_desc">Store HTML, JavaScript, or CSS snippets as named blocks. Insert anywhere with a shortcode. Edit once — updates everywhere.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon-wrap">🌍</div>
-                    <h3 data-i18n="feature_5_title">10 Languages</h3>
-                    <p data-i18n="feature_5_desc">Fully translated into 10 languages with auto-detection. Your language, your rules.</p>
+                    <div class="feature-icon">📋</div>
+                    <h3 data-i18n="feature_5_title">Batch Operations</h3>
+                    <p data-i18n="feature_5_desc">Edit multiple links at once — change category, tags, or status. Export links to CSV, import with auto-backup. PRO feature.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon-wrap">⚙️</div>
-                    <h3 data-i18n="feature_6_title">Batch Edit & CSV</h3>
-                    <p data-i18n="feature_6_desc">Edit multiple links at once. Import/export CSV with auto-backup. PRO feature.</p>
+                    <div class="feature-icon">🌍</div>
+                    <h3 data-i18n="feature_6_title">10 Languages</h3>
+                    <p data-i18n="feature_6_desc">Interface in English, Russian, German, French, Spanish, Italian, Chinese, Japanese, Portuguese, or Korean. Auto-detection.</p>
                 </div>
             </div>
         </div>
@@ -118,77 +156,55 @@
     <section id="pricing" class="pricing">
         <div class="container">
             <div class="section-header">
-                <h2 data-i18n="pricing_title">Choose Your Plan</h2>
-                <p class="section-subtitle" data-i18n="pricing_subtitle">One-time payment. No recurring fees. Lifetime updates.</p>
+                <h2 data-i18n="pricing_title">Simple Pricing</h2>
+                <p class="section-subtitle" data-i18n="pricing_subtitle">One payment. No subscription traps. Use forever.</p>
             </div>
             <div class="pricing-grid">
-                <!-- Monthly -->
                 <div class="pricing-card">
-                    <div class="pricing-icon">⚡</div>
                     <h3 data-i18n="plan_monthly">Monthly</h3>
-                    <p class="pricing-desc" data-i18n="plan_monthly_desc">Perfect for testing PRO features</p>
-                    <div class="pricing-price">
-                        <span class="pricing-currency"></span>
-                        <span class="pricing-value" data-i18n="price_monthly">₽499</span>
-                        <span class="pricing-period" data-i18n="price_monthly_suffix">/mo</span>
-                    </div>
+                    <p class="pricing-desc" data-i18n="plan_monthly_desc">Try PRO risk-free</p>
+                    <div class="pricing-price"><span class="pricing-value" data-i18n="price_monthly">$4.99</span><span class="pricing-period" data-i18n="price_monthly_suffix">/mo</span></div>
                     <ul class="pricing-features">
-                        <li>✅ <span data-i18n="feature_monthly_1">Unlimited Links</span></li>
-                        <li>✅ <span data-i18n="feature_monthly_2">Unlimited Shortcodes</span></li>
-                        <li>✅ <span data-i18n="feature_monthly_3">Batch Edit</span></li>
-                        <li>✅ <span data-i18n="feature_monthly_4">CSV Import/Export</span></li>
-                        <li>✅ <span data-i18n="feature_monthly_5">Password Protection</span></li>
-                        <li>✅ <span data-i18n="feature_monthly_6">1 Month Access</span></li>
+                        <li><span data-i18n="p_feat_unlim_links">Unlimited links</span></li>
+                        <li><span data-i18n="p_feat_unlim_blocks">Unlimited shortcodes</span></li>
+                        <li><span data-i18n="p_feat_batch">Batch editing</span></li>
+                        <li><span data-i18n="p_feat_csv">CSV import & export</span></li>
+                        <li><span data-i18n="p_feat_pass">Password protection</span></li>
+                        <li><span data-i18n="p_feat_monthly">1 month of updates</span></li>
                     </ul>
                     <button class="btn btn-primary btn-block" onclick="buy('monthly')" data-i18n="btn_buy">Get Started</button>
                 </div>
-                <!-- Yearly (Popular) -->
                 <div class="pricing-card popular">
-                    <div class="popular-badge" data-i18n="popular">🔥 Most Popular</div>
-                    <div class="pricing-icon">🌟</div>
+                    <div class="popular-badge" data-i18n="popular">Best Value</div>
                     <h3 data-i18n="plan_yearly">Yearly</h3>
-                    <p class="pricing-desc" data-i18n="plan_yearly_desc">Best value for active users</p>
-                    <div class="pricing-price">
-                        <span class="pricing-currency"></span>
-                        <span class="pricing-value" data-i18n="price_yearly">₽3 900</span>
-                        <span class="pricing-period" data-i18n="price_yearly_suffix">/yr</span>
-                    </div>
-                    <div class="pricing-save" data-i18n="save">💎 Save 35% vs monthly</div>
+                    <p class="pricing-desc" data-i18n="plan_yearly_desc">Save 35% vs monthly</p>
+                    <div class="pricing-price"><span class="pricing-value" data-i18n="price_yearly">$29</span><span class="pricing-period" data-i18n="price_yearly_suffix">/yr</span></div>
                     <ul class="pricing-features">
-                        <li>✅ <span data-i18n="feature_yearly_1">Unlimited Links</span></li>
-                        <li>✅ <span data-i18n="feature_yearly_2">Unlimited Shortcodes</span></li>
-                        <li>✅ <span data-i18n="feature_yearly_3">Batch Edit</span></li>
-                        <li>✅ <span data-i18n="feature_yearly_4">CSV Import/Export</span></li>
-                        <li>✅ <span data-i18n="feature_yearly_5">Password Protection</span></li>
-                        <li>✅ <span data-i18n="feature_yearly_6">1 Year Access</span></li>
+                        <li><span data-i18n="p_feat_unlim_links">Unlimited links</span></li>
+                        <li><span data-i18n="p_feat_unlim_blocks">Unlimited shortcodes</span></li>
+                        <li><span data-i18n="p_feat_batch">Batch editing</span></li>
+                        <li><span data-i18n="p_feat_csv">CSV import & export</span></li>
+                        <li><span data-i18n="p_feat_pass">Password protection</span></li>
+                        <li><span data-i18n="p_feat_yearly">1 year of updates</span></li>
                     </ul>
                     <button class="btn btn-primary btn-block" onclick="buy('yearly')" data-i18n="btn_buy">Get Started</button>
                 </div>
-                <!-- Lifetime -->
                 <div class="pricing-card">
-                    <div class="pricing-icon">👑</div>
                     <h3 data-i18n="plan_lifetime">Lifetime</h3>
-                    <p class="pricing-desc" data-i18n="plan_lifetime_desc">One payment, forever access</p>
-                    <div class="pricing-price">
-                        <span class="pricing-currency"></span>
-                        <span class="pricing-value" data-i18n="price_lifetime">₽7 900</span>
-                        <span class="pricing-period" data-i18n="price_lifetime_suffix">/forever</span>
-                    </div>
-                    <div class="pricing-save" data-i18n="save_lifetime">💎 Best deal — saves 86% after 2 years</div>
+                    <p class="pricing-desc" data-i18n="plan_lifetime_desc">Pay once, own forever</p>
+                    <div class="pricing-price"><span class="pricing-value" data-i18n="price_lifetime">$79</span><span class="pricing-period" data-i18n="price_lifetime_suffix">/forever</span></div>
                     <ul class="pricing-features">
-                        <li>✅ <span data-i18n="feature_lifetime_1">Unlimited Links</span></li>
-                        <li>✅ <span data-i18n="feature_lifetime_2">Unlimited Shortcodes</span></li>
-                        <li>✅ <span data-i18n="feature_lifetime_3">Batch Edit</span></li>
-                        <li>✅ <span data-i18n="feature_lifetime_4">CSV Import/Export</span></li>
-                        <li>✅ <span data-i18n="feature_lifetime_5">Password Protection</span></li>
-                        <li>✅ <span data-i18n="feature_lifetime_6">Lifetime Access</span></li>
+                        <li><span data-i18n="p_feat_unlim_links">Unlimited links</span></li>
+                        <li><span data-i18n="p_feat_unlim_blocks">Unlimited shortcodes</span></li>
+                        <li><span data-i18n="p_feat_batch">Batch editing</span></li>
+                        <li><span data-i18n="p_feat_csv">CSV import & export</span></li>
+                        <li><span data-i18n="p_feat_pass">Password protection</span></li>
+                        <li><span data-i18n="p_feat_lifetime">Lifetime updates</span></li>
                     </ul>
                     <button class="btn btn-primary btn-block" onclick="buy('lifetime')" data-i18n="btn_buy">Get Started</button>
                 </div>
             </div>
-            <div class="pricing-guarantee">
-                <p>🛡️ <span data-i18n="guarantee">14-day money-back guarantee. No questions asked.</span></p>
-            </div>
+            <p class="pricing-guarantee" data-i18n="guarantee">14-day money-back guarantee. No questions asked.</p>
         </div>
     </section>
 
@@ -200,20 +216,15 @@
             </div>
             <div class="comparison-table-wrap">
                 <table class="comparison-table">
-                    <thead>
-                        <tr><th data-i18n="comp_feature">Feature</th><th class="col-free">🆓 Free</th><th class="col-pro">⚡ PRO</th></tr>
-                    </thead>
+                    <thead><tr><th>Feature</th><th>Free</th><th>PRO</th></tr></thead>
                     <tbody>
-                        <tr><td data-i18n="comp_links">Links</td><td class="col-free">20</td><td class="col-pro">∞ Unlimited</td></tr>
-                        <tr><td data-i18n="comp_shortcodes">Shortcodes</td><td class="col-free">20</td><td class="col-pro">∞ Unlimited</td></tr>
-                        <tr><td data-i18n="comp_redirects">Redirect Types</td><td class="col-free">301, 302, 307</td><td class="col-pro">301, 302, 307</td></tr>
-                        <tr><td data-i18n="comp_tracking">Click Tracking</td><td class="col-free">✅ Counter</td><td class="col-pro">✅ Full Analytics</td></tr>
-                        <tr><td data-i18n="comp_password">Password Protection</td><td class="col-free">❌</td><td class="col-pro">✅</td></tr>
-                        <tr><td data-i18n="comp_batch">Batch Edit</td><td class="col-free">❌</td><td class="col-pro">✅</td></tr>
-                        <tr><td data-i18n="comp_csv">CSV Import/Export</td><td class="col-free">❌</td><td class="col-pro">✅</td></tr>
-                        <tr><td data-i18n="comp_prefix">Custom URL Prefix</td><td class="col-free">Global only</td><td class="col-pro">✅ Per-link</td></tr>
-                        <tr><td data-i18n="comp_support">Support</td><td class="col-free">Forum</td><td class="col-pro">✅ Priority Email</td></tr>
-                        <tr><td data-i18n="comp_price">Price</td><td class="col-free">Free</td><td class="col-pro">From ₽499</td></tr>
+                        <tr><td data-i18n="comp_links">Links</td><td>20</td><td>Unlimited</td></tr>
+                        <tr><td data-i18n="comp_shortcodes">Shortcodes</td><td>20</td><td>Unlimited</td></tr>
+                        <tr><td data-i18n="comp_tracking">Click Tracking</td><td>Yes</td><td>Yes + logs</td></tr>
+                        <tr><td data-i18n="comp_password">Password Protection</td><td>—</td><td>Yes</td></tr>
+                        <tr><td data-i18n="comp_batch">Batch Edit</td><td>—</td><td>Yes</td></tr>
+                        <tr><td data-i18n="comp_csv">CSV Import/Export</td><td>—</td><td>Yes</td></tr>
+                        <tr><td data-i18n="comp_price">Price</td><td>Free</td><td>From $4.99</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -225,41 +236,16 @@
         <div class="container">
             <div class="section-header">
                 <h2 data-i18n="faq_title">Frequently Asked Questions</h2>
-                <p class="section-subtitle" data-i18n="faq_subtitle">Everything you need to know about Link Forge PRO.</p>
             </div>
             <div class="faq-grid">
-                <details>
-                    <summary data-i18n="faq_1_q">How do I activate the PRO license?</summary>
-                    <p data-i18n="faq_1_a">After purchase, you'll receive a license key by email within 24 hours. Go to WordPress admin → Link Forge → Settings, paste the key, and click Activate. That's it — all PRO features unlock instantly.</p>
-                </details>
-                <details>
-                    <summary data-i18n="faq_2_q">Can I upgrade from monthly to yearly or lifetime?</summary>
-                    <p data-i18n="faq_2_a">Absolutely! Purchase any higher plan at any time. Your new license key will replace the old one immediately. The remaining time on your current plan will not be refunded.</p>
-                </details>
-                <details>
-                    <summary data-i18n="faq_3_q">Is the license valid for one site or multiple?</summary>
-                    <p data-i18n="faq_3_a">One license = one WordPress site (domain). If you need PRO for multiple sites, you can purchase additional licenses. Each site requires its own activation.</p>
-                </details>
-                <details>
-                    <summary data-i18n="faq_4_q">How do I get the free version?</summary>
-                    <p data-i18n="faq_4_a">Download Link Forge Free directly from the <a href="https://wordpress.org/plugins/link-forge">WordPress.org plugin repository</a> or install it from your WordPress admin panel. Free version includes up to 20 links and 20 shortcodes.</p>
-                </details>
-                <details>
-                    <summary data-i18n="faq_5_q">What happens when my license expires?</summary>
-                    <p data-i18n="faq_5_a">When your license expires, PRO features become unavailable. Your existing links and shortcodes continue to work, but you won't be able to create new ones beyond the free limit until you renew.</p>
-                </details>
-                <details>
-                    <summary data-i18n="faq_6_q">Do you offer refunds?</summary>
-                    <p data-i18n="faq_6_a">Yes! We offer a 14-day money-back guarantee. If you're not satisfied with Link Forge PRO, email us and we'll refund your purchase — no questions asked. See our <a href="docs/refund.html">Refund Policy</a> for details.</p>
-                </details>
-                <details>
-                    <summary data-i18n="faq_7_q">How does link tracking work?</summary>
-                    <p data-i18n="faq_7_a">When tracking is enabled, Link Forge records every click with timestamp, IP address, user-agent (browser/device), and referrer URL. You can view click counts in the dashboard and reset counters anytime.</p>
-                </details>
-                <details>
-                    <summary data-i18n="faq_8_q">Can I use custom URL prefixes?</summary>
-                    <p data-i18n="faq_8_a">Yes! In the free version, you can set one global prefix (e.g., /go/). PRO users can set individual prefixes for each link or even remove the prefix entirely for clean short URLs.</p>
-                </details>
+                <details><summary data-i18n="faq_1_q">How do I activate PRO?</summary><p data-i18n="faq_1_a">After purchase, you'll receive a license key by email. Go to WordPress admin → Link Forge → Settings, paste the key, click Activate. Done.</p></details>
+                <details><summary data-i18n="faq_2_q">Can I upgrade later?</summary><p data-i18n="faq_2_a">Yes. Purchase a higher plan anytime. The new key replaces the old one immediately.</p></details>
+                <details><summary data-i18n="faq_3_q">One license per site?</summary><p data-i18n="faq_3_a">Yes, one license = one domain. Need more sites? Buy additional licenses.</p></details>
+                <details><summary data-i18n="faq_4_q">How do links work?</summary><p data-i18n="faq_4_a">You create a key (like "sale") and a target URL. The plugin creates yoursite.com/go/sale — anyone who visits it is redirected to the target. You can track clicks or protect with a password.</p></details>
+                <details><summary data-i18n="faq_5_q">How do shortcodes work?</summary><p data-i18n="faq_5_a">Create a block with a title and your code. Use the shortcode [forge block="title"] in any post or page. Edit the block once — it changes everywhere.</p></details>
+                <details><summary data-i18n="faq_6_q">What happens when license expires?</summary><p data-i18n="faq_6_a">PRO features stop. Existing links keep working. You can't create new ones beyond the free limit until renewal.</p></details>
+                <details><summary data-i18n="faq_7_q">Do you offer refunds?</summary><p data-i18n="faq_7_a">Yes, 14-day money-back guarantee. Email us — we'll refund, no questions asked.</p></details>
+                <details><summary data-i18n="faq_8_q">Can I use custom prefixes?</summary><p data-i18n="faq_8_a">Yes. Free: one global prefix (like /go/). PRO: individual prefixes per link or no prefix at all.</p></details>
             </div>
         </div>
     </section>
@@ -267,44 +253,38 @@
     <!-- CTA -->
     <section class="cta">
         <div class="container">
-            <h2 data-i18n="cta_title">Ready to Forge Powerful Links?</h2>
-            <p data-i18n="cta_desc">Join thousands of WordPress users who trust Link Forge for their redirect and shortcode management.</p>
-            <a href="#pricing" class="btn btn-primary btn-lg" data-i18n="cta_btn">🚀 Get PRO Now</a>
+            <h2 data-i18n="cta_title">Ready to Get Started?</h2>
+            <p data-i18n="cta_desc">Join WordPress users who manage their links professionally with Link Forge.</p>
+            <a href="#pricing" class="btn btn-primary btn-lg" data-i18n="cta_btn">Get PRO Now</a>
         </div>
     </section>
 
-    <!-- PAYMENT MODAL -->
+    <!-- MODAL -->
     <div id="payment-modal" class="modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal()">&times;</span>
-            <div class="modal-icon">💳</div>
             <h2 data-i18n="modal_title">Complete Your Purchase</h2>
             <p id="modal-plan-name"></p>
             <p id="modal-price"></p>
             <form id="payment-form" onsubmit="submitPayment(event)">
-                <label for="email" data-i18n="modal_email">📧 Email for license key delivery</label>
+                <label for="email" data-i18n="modal_email">Email for license key delivery</label>
                 <input type="email" id="email" required placeholder="your@email.com">
-                <button type="submit" class="btn btn-primary btn-block" data-i18n="modal_pay">💳 Pay with Card</button>
+                <button type="submit" class="btn btn-primary btn-block" data-i18n="modal_pay">Pay with Card</button>
             </form>
-            <p class="modal-secure">🔒 Secure payment • 14-day money-back guarantee</p>
+            <p class="modal-secure">Secure payment • 14-day money-back guarantee</p>
         </div>
     </div>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-brand">
-                <span class="logo-icon">⚒️</span>
-                <strong>Link Forge</strong>
-                <span>PRO</span>
-            </div>
+            <p>© 2026 Link Forge</p>
             <div class="footer-links">
-                <a href="docs/policy.html">Privacy Policy</a>
-                <a href="docs/offer.html">Public Offer</a>
-                <a href="docs/refund.html">Refund Policy</a>
-                <a href="mailto:linkforge.support@gmail.com">📧 Support</a>
+                <a href="docs/policy.html">Privacy</a>
+                <a href="docs/offer.html">Terms</a>
+                <a href="docs/refund.html">Refund</a>
+                <a href="mailto:linkforge.support@gmail.com">Support</a>
             </div>
-            <p class="footer-copy">© 2026 Link Forge. <span data-i18n="footer_rights">All rights reserved.</span></p>
         </div>
     </footer>
 

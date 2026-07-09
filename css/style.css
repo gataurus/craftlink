@@ -164,3 +164,114 @@ body {
     .how-block { flex-direction: column; }
     .nav a { display: none; }
 }
+
+/* How It Works — примеры в строку со стрелками */
+.how-example {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+.how-code.full {
+    flex: 0 0 auto;
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.how-code {
+    font-family: monospace;
+    font-size: 12px;
+    background: var(--surface2);
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: var(--text-secondary);
+}
+.how-code.highlight {
+    background: var(--orange-bg);
+    color: var(--orange);
+    border: 1px solid var(--orange-light);
+}
+.how-arrow {
+    color: var(--orange);
+    font-size: 18px;
+    font-weight: 700;
+}
+.how-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Comparison Cards */
+.comparison-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.comparison-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+.comparison-card.popular {
+    border-color: var(--orange);
+}
+.comparison-card-header {
+    padding: 16px 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+}
+.comparison-card-header.free {
+    background: var(--surface2);
+    color: var(--text-muted);
+}
+.comparison-card-header.pro {
+    background: var(--orange-bg);
+    color: var(--orange);
+}
+.comparison-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.comparison-card li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+.comparison-card li:last-child {
+    border-bottom: none;
+}
+.comparison-card li strong {
+    color: var(--text);
+    font-weight: 600;
+}
+.comparison-card.popular li strong {
+    color: var(--orange);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .comparison-cards {
+        grid-template-columns: 1fr;
+    }
+    .how-example {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .how-code.full {
+        max-width: 100%;
+    }
+}

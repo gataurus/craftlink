@@ -1,30 +1,40 @@
-name: Deploy with secrets
+name: Deploy with Secrets
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          persist-credentials: true
-          fetch-depth: 0
+    - name: Checkout
+      uses: actions/checkout@v4
       
-      - name: Replace API URL placeholder
-        run: sed -i "s|__FORGE_API_URL__|${{ secrets.FORGE_API_URL }}|g" js/main.js
+    - name: Replace secrets
+      run: |
+        echo "=== Replacing secrets ==="
+        sed -i "s|__FORGE_API_URL__|${{ secrets.FORGE_API_URL }}|g" js/main.js
+        echo "=== Done ==="
+        
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
       
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          publish_branch: main
-          force_orphan: false
-          allow_empty_commit: true
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+        
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

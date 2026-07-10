@@ -17,6 +17,7 @@ function applyTranslations(lang) {
     localStorage.setItem('forge_lang', lang);
     document.documentElement.lang = lang;
     
+    // Обычные переводы
     document.querySelectorAll('[data-i18n]').forEach(function(el) {
         var key = el.getAttribute('data-i18n');
         if (t[key]) {
@@ -29,6 +30,14 @@ function applyTranslations(lang) {
             } else {
                 el.textContent = t[key];
             }
+        }
+    });
+    
+    // HTML-переводы (с тегами)
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n-html');
+        if (t[key]) {
+            el.innerHTML = t[key];
         }
     });
 }
@@ -70,7 +79,6 @@ async function submitPayment(e) {
     
     try {
         var apiUrl = FORGE_API_URL + '/create-payment.php';
-        console.log('Sending payment request to:', apiUrl);
         
         var response = await fetch(apiUrl, {
             method: 'POST',
@@ -78,9 +86,7 @@ async function submitPayment(e) {
             body: JSON.stringify({ email: email, plan: selectedPlan })
         });
         
-        console.log('Response status:', response.status);
         var data = await response.json();
-        console.log('Response data:', data);
         
         if (data.success && data.payment_url) {
             window.location.href = data.payment_url;
@@ -120,32 +126,3 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('lang-select').value = lang;
     applyTranslations(lang);
 });
-
-function applyTranslations(lang) {
-    var t = FORGE_TRANSLATIONS[lang] || FORGE_TRANSLATIONS['en'];
-    currentLang = lang;
-    localStorage.setItem('forge_lang', lang);
-    document.documentElement.lang = lang;
-    
-    document.querySelectorAll('[data-i18n]').forEach(function(el) {
-        var key = el.getAttribute('data-i18n');
-        if (t[key]) {
-            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                if (el.type === 'submit' || el.type === 'button') {
-                    el.value = t[key];
-                } else {
-                    el.placeholder = t[key];
-                }
-            } else {
-                el.textContent = t[key];
-            }
-        }
-    });
-    
-    document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
-        var key = el.getAttribute('data-i18n-html');
-        if (t[key]) {
-            el.innerHTML = t[key];
-        }
-    });
-}

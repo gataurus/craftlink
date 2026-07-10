@@ -120,3 +120,32 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('lang-select').value = lang;
     applyTranslations(lang);
 });
+
+function applyTranslations(lang) {
+    var t = FORGE_TRANSLATIONS[lang] || FORGE_TRANSLATIONS['en'];
+    currentLang = lang;
+    localStorage.setItem('forge_lang', lang);
+    document.documentElement.lang = lang;
+    
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[key]) {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                if (el.type === 'submit' || el.type === 'button') {
+                    el.value = t[key];
+                } else {
+                    el.placeholder = t[key];
+                }
+            } else {
+                el.textContent = t[key];
+            }
+        }
+    });
+    
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n-html');
+        if (t[key]) {
+            el.innerHTML = t[key];
+        }
+    });
+}

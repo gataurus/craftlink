@@ -17,7 +17,6 @@ function applyTranslations(lang) {
     localStorage.setItem('forge_lang', lang);
     document.documentElement.lang = lang;
     
-    // Обычные переводы
     document.querySelectorAll('[data-i18n]').forEach(function(el) {
         var key = el.getAttribute('data-i18n');
         if (t[key]) {
@@ -33,7 +32,6 @@ function applyTranslations(lang) {
         }
     });
     
-    // HTML-переводы (с тегами)
     document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
         var key = el.getAttribute('data-i18n-html');
         if (t[key]) {
@@ -47,18 +45,16 @@ function changeLang(lang) {
     applyTranslations(lang);
 }
 
-// Payment
-var selectedPlan = 'yearly';
+var selectedPlan = 'lifetime';
 
 function buy(plan) {
-    selectedPlan = plan;
-    
+    selectedPlan = 'lifetime';
     var t = FORGE_TRANSLATIONS[currentLang] || FORGE_TRANSLATIONS['en'];
-    var planName = t['plan_' + plan];
-    var price = t['price_' + plan];
+    var planName = 'Lifetime PRO';
+    var price = currentLang === 'ru' ? '₽4 900' : '$49';
     
     document.getElementById('modal-plan-name').textContent = planName;
-    document.getElementById('modal-price').textContent = price + ' — Link Forge PRO (' + planName + ')';
+    document.getElementById('modal-price').textContent = price + ' — Link Forge PRO';
     document.getElementById('payment-modal').classList.add('open');
     document.getElementById('email').focus();
 }
@@ -83,7 +79,7 @@ async function submitPayment(e) {
         var response = await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email, plan: selectedPlan })
+            body: JSON.stringify({ email: email, plan: 'lifetime' })
         });
         
         var data = await response.json();
@@ -103,7 +99,6 @@ async function submitPayment(e) {
     }
 }
 
-// Modal close
 document.getElementById('payment-modal').addEventListener('click', function(e) {
     if (e.target === this) closeModal();
 });
@@ -111,7 +106,6 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeModal();
 });
 
-// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -120,7 +114,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     });
 });
 
-// Init
 document.addEventListener('DOMContentLoaded', function() {
     var lang = detectLang();
     document.getElementById('lang-select').value = lang;

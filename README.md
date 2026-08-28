@@ -1,8 +1,8 @@
-# 🔨 Link Forge
+# 🔨 CraftLink
 
-**Forge powerful links and blocks. Redirect, track, cloak, manage URLs, and embed HTML/JS/CSS snippets — all from one powerful dashboard.**
+**Craft powerful links and blocks. Redirect, track, cloak, manage URLs, and embed HTML/JS/CSS snippets — all from one powerful dashboard.**
 
-[![Version](https://img.shields.io/badge/version-1.5.0-blue.svg)](https://github.com/gataurus/link-forge)
+[![Version](https://img.shields.io/badge/version-1.5.0-blue.svg)](https://github.com/gataurus/craftlink)
 [![License](https://img.shields.io/badge/license-GPL%20v2-green.svg)](LICENSE)
 [![PHP](https://img.shields.io/badge/PHP-7.2+-purple.svg)](https://php.net)
 [![WordPress](https://img.shields.io/badge/WordPress-5.0+-blue.svg)](https://wordpress.org)
@@ -11,9 +11,9 @@
 
 ---
 
-## 🔗 What is Link Forge?
+## 🔗 What is CraftLink?
 
-Link Forge is a comprehensive WordPress plugin for managing redirect links and shortcode blocks. Create cloaked links, track clicks, and embed custom code snippets with an intuitive modern interface.
+CraftLink is a comprehensive WordPress plugin for managing redirect links and shortcode blocks. Create cloaked links, track clicks, and embed custom code snippets with an intuitive modern interface.
 
 ---
 
@@ -22,7 +22,7 @@ Link Forge is a comprehensive WordPress plugin for managing redirect links and s
 ### Link Management
 - 🔄 301, 302, 307 redirects
 - 🎯 Custom URL prefixes
-- 🔒 Password-protected links (PRO)
+- 🔒 Password-protected links
 - 📊 Click tracking with counter and detailed logs (IP, user-agent, referrer)
 - 📋 Bulk actions (delete, toggle, export, change category)
 - 🔍 Live search and category filtering
@@ -49,8 +49,8 @@ Link Forge is a comprehensive WordPress plugin for managing redirect links and s
 - 🇰🇷 Korean
 
 ### Tools
-- 📥 CSV import/export with auto-backup (PRO)
-- ✏️ Batch edit (PRO)
+- 📥 CSV import/export with auto-backup
+- ✏️ Batch edit
 - 📝 RTL support
 - 📋 One-click copy to clipboard
 - 🎨 Modern, intuitive interface
@@ -64,37 +64,41 @@ Link Forge is a comprehensive WordPress plugin for managing redirect links and s
 2. Go to WordPress Admin → Plugins → Add New → Upload Plugin
 3. Choose the ZIP file and click "Install Now"
 4. Activate the plugin
-5. Configure via **Link Forge** menu
+5. Configure via **CraftLink** menu
 
 ---
 
 ## 🔧 Requirements
 
-- WordPress 5.0 or higher
-- PHP 7.2 or higher
+- WordPress 5.3 or higher
+- PHP 7.4 or higher
 - Modern browser (Chrome, Firefox, Safari, Edge)
 
 ---
 
-## 🆚 Free vs PRO
+## 💰 Pricing
 
-| Feature | Free | PRO |
-|---------|------|-----|
-| Links | 20 | Unlimited |
-| Shortcodes | 20 | Unlimited |
-| Password Protection | ❌ | ✅ |
-| Custom URL Prefix | Global | Per-link |
-| Batch Edit | ❌ | ✅ |
-| CSV Import/Export | ❌ | ✅ |
-| Price | **Free** | **From $4.99** |
+**One payment. Full access. Forever.**
 
-[🔓 Upgrade to PRO](https://gataurus.github.io/link-forge)
+| | **Lifetime PRO** |
+|---|---|
+| **Price** | **$49** (one-time) |
+| Links | ✅ Unlimited |
+| Shortcodes | ✅ Unlimited |
+| Password Protection | ✅ |
+| Custom URL Prefix | ✅ Per-link |
+| Batch Edit | ✅ |
+| CSV Import/Export | ✅ |
+| Updates | ✅ Lifetime |
+| Support | ✅ Lifetime |
+
+[🔓 Get CraftLink PRO](https://gataurus.github.io/craftlink)
 
 ---
 
 ## 🌍 Language Support
 
-Link Forge speaks your language! Available in:
+CraftLink speaks your language! Available in:
 - 🇺🇸 English (default)
 - 🇷🇺 Russian
 - 🇩🇪 German
@@ -110,9 +114,9 @@ Link Forge speaks your language! Available in:
 
 ## 📄 Documentation
 
-- [Privacy Policy](https://gataurus.github.io/link-forge/docs/policy.html)
-- [Public Offer](https://gataurus.github.io/link-forge/docs/offer.html)
-- [Refund Policy](https://gataurus.github.io/link-forge/docs/refund.html)
+- [Privacy Policy](https://gataurus.github.io/craftlink/docs/policy.html)
+- [Public Offer](https://gataurus.github.io/craftlink/docs/offer.html)
+- [Refund Policy](https://gataurus.github.io/craftlink/docs/refund.html)
 
 ---
 
@@ -125,7 +129,7 @@ Need help? Contact us at [linkforge.support@gmail.com](mailto:linkforge.support@
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
-- 🐛 Report bugs via [GitHub Issues](https://github.com/gataurus/link-forge/issues)
+- 🐛 Report bugs via [GitHub Issues](https://github.com/gataurus/craftlink/issues)
 - 💡 Suggest new features
 - 🔧 Submit pull requests
 - 🌍 Help with translations
@@ -138,4 +142,4 @@ GNU General Public License v2.0 — see [LICENSE](LICENSE)
 
 ---
 
-**Developed by [gataurus](https://github.com/gataurus)**
+**Developed by [gataurus](https://github.com/gataurus)

@@ -1,19 +1,19 @@
-# 🔨 CraftLink
+# 🔗 Link Reactor
 
-**Craft powerful links and blocks. Redirect, track, cloak, manage URLs, and embed HTML/JS/CSS snippets — all from one powerful dashboard.**
+**Fuel your links. Power your shortcodes. Redirect, track, and manage URLs — all from one powerful dashboard.**
 
-[![Version](https://img.shields.io/badge/version-1.5.0-blue.svg)](https://github.com/gataurus/craftlink)
+[![Version](https://img.shields.io/badge/version-1.3.1-blue.svg)](https://github.com/gataurus/link-reactor)
 [![License](https://img.shields.io/badge/license-GPL%20v2-green.svg)](LICENSE)
-[![PHP](https://img.shields.io/badge/PHP-7.2+-purple.svg)](https://php.net)
-[![WordPress](https://img.shields.io/badge/WordPress-5.0+-blue.svg)](https://wordpress.org)
+[![PHP](https://img.shields.io/badge/PHP-7.4+-purple.svg)](https://php.net)
+[![WordPress](https://img.shields.io/badge/WordPress-5.3+-blue.svg)](https://wordpress.org)
 
 **Author:** [gataurus](https://github.com/gataurus)
 
 ---
 
-## 🔗 What is CraftLink?
+## 🔗 What is Link Reactor?
 
-CraftLink is a comprehensive WordPress plugin for managing redirect links and shortcode blocks. Create cloaked links, track clicks, and embed custom code snippets with an intuitive modern interface.
+Link Reactor is a comprehensive WordPress plugin for managing redirect links and shortcode blocks. Create clean, trackable links, cloak affiliate URLs, and embed custom code snippets with an intuitive modern interface. Completely free and open source.
 
 ---
 
@@ -21,10 +21,9 @@ CraftLink is a comprehensive WordPress plugin for managing redirect links and sh
 
 ### Link Management
 - 🔄 301, 302, 307 redirects
-- 🎯 Custom URL prefixes
-- 🔒 Password-protected links
+- 🎯 Custom URL prefixes per link
 - 📊 Click tracking with counter and detailed logs (IP, user-agent, referrer)
-- 📋 Bulk actions (delete, toggle, export, change category)
+- 📋 Bulk actions (delete, toggle, change category)
 - 🔍 Live search and category filtering
 - 📱 Responsive management table with infinite scroll
 
@@ -54,7 +53,6 @@ CraftLink is a comprehensive WordPress plugin for managing redirect links and sh
 - 📝 RTL support
 - 📋 One-click copy to clipboard
 - 🎨 Modern, intuitive interface
-- 🔑 License activation system
 
 ---
 
@@ -64,7 +62,7 @@ CraftLink is a comprehensive WordPress plugin for managing redirect links and sh
 2. Go to WordPress Admin → Plugins → Add New → Upload Plugin
 3. Choose the ZIP file and click "Install Now"
 4. Activate the plugin
-5. Configure via **CraftLink** menu
+5. Configure via **Link Reactor** menu
 
 ---
 
@@ -76,29 +74,9 @@ CraftLink is a comprehensive WordPress plugin for managing redirect links and sh
 
 ---
 
-## 💰 Pricing
-
-**One payment. Full access. Forever.**
-
-| | **Lifetime PRO** |
-|---|---|
-| **Price** | **$49** (one-time) |
-| Links | ✅ Unlimited |
-| Shortcodes | ✅ Unlimited |
-| Password Protection | ✅ |
-| Custom URL Prefix | ✅ Per-link |
-| Batch Edit | ✅ |
-| CSV Import/Export | ✅ |
-| Updates | ✅ Lifetime |
-| Support | ✅ Lifetime |
-
-[🔓 Get CraftLink PRO](https://gataurus.github.io/craftlink)
-
----
-
 ## 🌍 Language Support
 
-CraftLink speaks your language! Available in:
+Link Reactor speaks your language! Available in:
 - 🇺🇸 English (default)
 - 🇷🇺 Russian
 - 🇩🇪 German
@@ -112,14 +90,6 @@ CraftLink speaks your language! Available in:
 
 ---
 
-## 📄 Documentation
-
-- [Privacy Policy](https://gataurus.github.io/craftlink/docs/policy.html)
-- [Public Offer](https://gataurus.github.io/craftlink/docs/offer.html)
-- [Refund Policy](https://gataurus.github.io/craftlink/docs/refund.html)
-
----
-
 ## 📧 Support
 
 Need help? Contact us at [linkforge.support@gmail.com](mailto:linkforge.support@gmail.com)
@@ -129,7 +99,7 @@ Need help? Contact us at [linkforge.support@gmail.com](mailto:linkforge.support@
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
-- 🐛 Report bugs via [GitHub Issues](https://github.com/gataurus/craftlink/issues)
+- 🐛 Report bugs via [GitHub Issues](https://github.com/gataurus/link-reactor/issues)
 - 💡 Suggest new features
 - 🔧 Submit pull requests
 - 🌍 Help with translations
@@ -142,4 +112,4 @@ GNU General Public License v2.0 — see [LICENSE](LICENSE)
 
 ---
 
-**Developed by [gataurus](https://github.com/gataurus)
+**Developed by [gataurus](https://github.com/gataurus)**

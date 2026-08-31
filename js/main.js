@@ -1,5 +1,4 @@
 var currentLang = 'en';
-var FORGE_API_URL = 'https://bitcoins-mining.net/link-forge-api';
 
 function detectLang() {
     var saved = localStorage.getItem('forge_lang');
@@ -45,67 +44,6 @@ function changeLang(lang) {
     applyTranslations(lang);
 }
 
-var selectedPlan = 'lifetime';
-
-function buy(plan) {
-    selectedPlan = 'lifetime';
-    var t = FORGE_TRANSLATIONS[currentLang] || FORGE_TRANSLATIONS['en'];
-    var planName = 'Lifetime PRO';
-    var price = currentLang === 'ru' ? '₽4 900' : '$49';
-    
-    document.getElementById('modal-plan-name').textContent = planName;
-    document.getElementById('modal-price').textContent = price + ' — Link Forge PRO';
-    document.getElementById('payment-modal').classList.add('open');
-    document.getElementById('email').focus();
-}
-
-function closeModal() {
-    document.getElementById('payment-modal').classList.remove('open');
-}
-
-async function submitPayment(e) {
-    e.preventDefault();
-    var email = document.getElementById('email').value;
-    var btn = e.target.querySelector('button');
-    var originalText = btn.textContent;
-    if (!email) return;
-    
-    btn.textContent = 'Processing...';
-    btn.disabled = true;
-    
-    try {
-        var apiUrl = FORGE_API_URL + '/create-payment.php';
-        
-        var response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email, plan: 'lifetime' })
-        });
-        
-        var data = await response.json();
-        
-        if (data.success && data.payment_url) {
-            window.location.href = data.payment_url;
-        } else {
-            alert('Payment error: ' + (data.message || 'Unknown error'));
-            btn.textContent = originalText;
-            btn.disabled = false;
-        }
-    } catch (err) {
-        console.error('Payment error:', err);
-        alert('Network error. Check console for details.');
-        btn.textContent = originalText;
-        btn.disabled = false;
-    }
-}
-
-document.getElementById('payment-modal').addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
-});
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeModal();
-});
-
 document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -116,6 +54,9 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
 
 document.addEventListener('DOMContentLoaded', function() {
     var lang = detectLang();
-    document.getElementById('lang-select').value = lang;
+    var langSelect = document.getElementById('lang-select');
+    if (langSelect) {
+        langSelect.value = lang;
+    }
     applyTranslations(lang);
 });

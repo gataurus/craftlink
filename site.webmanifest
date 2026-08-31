@@ -1,10 +1,10 @@
 {
-    "name": "Link Forge PRO",
-    "short_name": "Link Forge",
-    "description": "Forge powerful links and blocks for WordPress",
-    "start_url": "/link-forge/",
+    "name": "Link Reactor",
+    "short_name": "Link Reactor",
+    "description": "Fuel your links. Power your shortcodes.",
+    "start_url": "/link-reactor/",
     "display": "standalone",
-    "background_color": "#0f0f0f",
+    "background_color": "#0f0a06",
     "theme_color": "#f97316",
     "icons": [
         {

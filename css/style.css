@@ -1,5 +1,6 @@
 /* ================================================================
    Link Reactor — Landing Page Styles
+   "Quantum Core" — Clean & Elegant
    ================================================================ */
 
 :root {
@@ -76,10 +77,6 @@ body {
     color: var(--text);
     font-weight: 700;
     font-size: 1.1em;
-}
-
-.logo svg {
-    /* Убрано свечение */
 }
 
 .logo-text {
@@ -230,23 +227,25 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 80px rgba(249, 115, 22, 0.25), inset 0 0 40px rgba(249, 115, 22, 0.08);
     animation: reactor-pulse 3s ease-in-out infinite;
 }
 
 .hero-icon-bg svg {
     width: 60%;
     height: 60%;
+    filter: drop-shadow(0 0 20px rgba(249, 115, 22, 0.5));
     animation: spin-slow 12s linear infinite;
 }
 
 @keyframes reactor-pulse {
     0%, 100% { 
+        box-shadow: 0 0 80px rgba(249, 115, 22, 0.25), inset 0 0 40px rgba(249, 115, 22, 0.08);
         transform: scale(1);
-        border-color: var(--orange-light);
     }
     50% { 
-        transform: scale(1.02);
-        border-color: rgba(249, 115, 22, 0.35);
+        box-shadow: 0 0 120px rgba(249, 115, 22, 0.4), inset 0 0 60px rgba(249, 115, 22, 0.15);
+        transform: scale(1.03);
     }
 }
 
@@ -641,9 +640,10 @@ body {
 }
 
 /* ================================================================
-   RESPONSIVE
+   RESPONSIVE — Mobile First
    ================================================================ */
 
+/* Tablet */
 @media (max-width: 992px) {
     .hero .container {
         flex-direction: column;
@@ -666,67 +666,135 @@ body {
     }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
     .header .container {
-        flex-wrap: wrap;
-        gap: 8px;
-        height: auto;
-        padding: 12px 24px;
+        height: 52px;
+        padding: 0 16px;
     }
+    
+    /* Скрываем навигацию на мобильных */
+    .nav a {
+        display: none;
+    }
+    
+    /* Показываем только переключатель языка */
     .nav {
-        flex-wrap: wrap;
-        gap: 10px 16px;
-        width: 100%;
-        justify-content: center;
+        gap: 0;
     }
+    
+    .lang-switcher select {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+    
+    .logo-text {
+        font-size: 0.9em;
+    }
+    
     .hero {
+        padding: 40px 0;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8em;
+        letter-spacing: -0.5px;
+    }
+    
+    .hero-content p {
+        font-size: 0.95em;
+    }
+    
+    .hero-badge {
+        font-size: 10px;
+        padding: 4px 12px;
+    }
+    
+    .hero-icon-bg {
+        width: 140px;
+        height: 140px;
+        margin: 20px auto 0;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5em;
+    }
+    
+    .how-it-works,
+    .features,
+    .faq,
+    .cta {
         padding: 48px 0;
     }
-    .hero-content h1 {
-        font-size: 2em;
-    }
-    .hero-icon-bg {
-        width: 160px;
-        height: 160px;
-    }
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
+    
     .how-block {
         flex-direction: column;
+        padding: 20px;
     }
+    
+    .how-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 28px;
+    }
+    
     .how-example {
         flex-direction: column;
         align-items: stretch;
         gap: 4px;
     }
+    
     .how-code.full {
         max-width: 100%;
     }
+    
     .how-arrow {
         transform: rotate(90deg);
         text-align: center;
     }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .feature-card {
+        padding: 20px;
+    }
+    
     .footer .container {
         flex-direction: column;
         text-align: center;
     }
+    
     .footer-links {
         flex-wrap: wrap;
         justify-content: center;
     }
 }
 
+/* Small Mobile */
 @media (max-width: 480px) {
     .hero-content h1 {
-        font-size: 1.6em;
+        font-size: 1.5em;
     }
+    
     .hero-buttons {
         flex-direction: column;
         align-items: stretch;
     }
+    
     .hero-buttons .btn {
         text-align: center;
         justify-content: center;
+    }
+    
+    .hero-icon-bg {
+        width: 120px;
+        height: 120px;
     }
 }

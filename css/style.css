@@ -78,10 +78,9 @@ body {
     font-size: 1.1em;
 }
 
-.logo-icon {
-    font-size: 24px;
+.logo svg {
     filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.5));
-    animation: spin-slow 8s linear infinite;
+    animation: spin-slow 12s linear infinite;
 }
 
 @keyframes spin-slow {
@@ -248,9 +247,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 100px;
     box-shadow: 0 0 80px rgba(249, 115, 22, 0.25), inset 0 0 40px rgba(249, 115, 22, 0.08);
     animation: reactor-pulse 3s ease-in-out infinite;
+}
+
+.hero-icon-bg svg {
+    width: 60%;
+    height: 60%;
+    filter: drop-shadow(0 0 20px rgba(249, 115, 22, 0.5));
+    animation: spin-slow 12s linear infinite;
 }
 
 @keyframes reactor-pulse {
@@ -671,7 +676,6 @@ body {
     .hero-icon-bg {
         width: 200px;
         height: 200px;
-        font-size: 72px;
     }
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -700,7 +704,6 @@ body {
     .hero-icon-bg {
         width: 160px;
         height: 160px;
-        font-size: 56px;
     }
     .features-grid {
         grid-template-columns: 1fr;

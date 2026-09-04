@@ -798,3 +798,49 @@ body {
         height: 120px;
     }
 }
+
+/* ================================================================
+   MOBILE HERO — Атом в центре
+   ================================================================ */
+
+@media (max-width: 768px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .hero-badge {
+        margin-bottom: 8px;
+        order: 1;
+    }
+
+    .hero-content h1 {
+        order: 2;
+        margin-bottom: 16px;
+    }
+
+    .hero-visual {
+        order: 3;
+        margin: 20px auto;
+    }
+
+    .hero-icon-bg {
+        width: 160px;
+        height: 160px;
+        margin: 0 auto;
+    }
+
+    .hero-content p {
+        order: 4;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hero-buttons {
+        order: 5;
+        justify-content: center;
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

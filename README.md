@@ -2,7 +2,7 @@
 
 **Fuel your links. Power your shortcodes. Redirect, track, and manage URLs — all from one powerful dashboard.**
 
-[![Version](https://img.shields.io/badge/version-1.3.1-blue.svg)](https://github.com/gataurus/link-reactor)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/gataurus/link-reactor)
 [![License](https://img.shields.io/badge/license-GPL%20v2-green.svg)](LICENSE)
 [![PHP](https://img.shields.io/badge/PHP-7.4+-purple.svg)](https://php.net)
 [![WordPress](https://img.shields.io/badge/WordPress-5.3+-blue.svg)](https://wordpress.org)
@@ -22,14 +22,13 @@ Link Reactor is a comprehensive WordPress plugin for managing redirect links and
 ### Link Management
 - 🔄 301, 302, 307 redirects
 - 🎯 Custom URL prefixes per link
-- 📊 Click tracking with counter and detailed logs (IP, user-agent, referrer)
-- 📋 Bulk actions (delete, toggle, change category)
+- 📊 Click tracking with counter
 - 🔍 Live search and category filtering
 - 📱 Responsive management table with infinite scroll
 
 ### Shortcode Blocks
 - 🧱 Embed HTML, JavaScript, or CSS anywhere
-- 💻 `[forge block="slug"]` shortcode
+- 💻 `[reactor block="slug"]` shortcode
 - 📂 Organize with categories and tags
 - ⚡ Lightweight execution
 - 🖊️ Editor button for quick insertion (Classic + Gutenberg)
@@ -48,11 +47,9 @@ Link Reactor is a comprehensive WordPress plugin for managing redirect links and
 - 🇰🇷 Korean
 
 ### Tools
-- 📥 CSV import/export with auto-backup
-- ✏️ Batch edit
 - 📝 RTL support
 - 📋 One-click copy to clipboard
-- 🎨 Modern, intuitive interface
+- 🎨 Modern, intuitive interface with dark/light theme
 
 ---
 
@@ -112,4 +109,4 @@ GNU General Public License v2.0 — see [LICENSE](LICENSE)
 
 ---
 
-**Developed by [gataurus](https://github.com/gataurus)**
+**Developed by [gataurus](https://github.com/gataurus)

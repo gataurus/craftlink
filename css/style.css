@@ -811,9 +811,28 @@ body {
     flex: 1;
 }
 
-/* На десктопе атом скрыт */
 .hero-visual {
-    display: none;
+    flex-shrink: 0;
+}
+
+.hero-icon-bg {
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, var(--orange-bg), rgba(249, 115, 22, 0.02));
+    border: 2px solid var(--orange-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 80px rgba(249, 115, 22, 0.25), inset 0 0 40px rgba(249, 115, 22, 0.08);
+    animation: reactor-pulse 3s ease-in-out infinite;
+}
+
+.hero-icon-bg svg {
+    width: 60%;
+    height: 60%;
+    filter: drop-shadow(0 0 20px rgba(249, 115, 22, 0.5));
+    animation: spin-slow 12s linear infinite;
 }
 
 /* ================================================================
@@ -844,11 +863,13 @@ body {
         margin-bottom: 20px;
     }
 
+    /* Атом встаёт после заголовка */
     .hero-visual {
-        display: block;
         order: 3;
         margin: 20px auto;
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .hero-icon-bg {

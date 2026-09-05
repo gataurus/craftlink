@@ -807,32 +807,14 @@ body {
     gap: 50px;
 }
 
-.hero-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.hero-text {
     flex: 1;
-}
-
-.hero-badge {
-    margin-right: 20px;
-}
-
-.hero-content h1 {
-    margin-right: 20px;
-}
-
-.hero-content p {
-    margin-right: 20px;
-}
-
-.hero-buttons {
-    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .hero-visual {
     flex-shrink: 0;
-    margin-left: auto;
 }
 
 .hero-icon-bg {
@@ -857,7 +839,7 @@ body {
 
 /* ================================================================
    HERO — Mobile
-========================================================= */
+   ================================================================ */
 
 @media (max-width: 768px) {
     .hero .container {
@@ -866,7 +848,7 @@ body {
         gap: 20px;
     }
 
-    .hero-content {
+    .hero-text {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -876,20 +858,32 @@ body {
     .hero-badge {
         order: 1;
         margin-bottom: 8px;
-        margin-right: 0;
     }
 
-    .hero-content h1 {
+    .hero-text h1 {
         order: 2;
         margin-bottom: 20px;
-        margin-right: 0;
+    }
+
+    .hero-text p {
+        order: 3;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hero-buttons {
+        order: 4;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
     }
 
     .hero-visual {
-        order: 3;
-        margin: 10px auto 20px;
+        order: 5;
+        margin: 20px auto;
         width: 100%;
-        margin-left: 0;
+        display: flex;
+        justify-content: center;
     }
 
     .hero-icon-bg {
@@ -900,21 +894,6 @@ body {
             0 0 30px rgba(249, 115, 22, 0.3),
             inset 0 0 20px rgba(249, 115, 22, 0.1);
         animation: hero-float 4s ease-in-out infinite;
-    }
-
-    .hero-content p {
-        order: 4;
-        max-width: 100%;
-        margin-bottom: 20px;
-        margin-right: 0;
-    }
-
-    .hero-buttons {
-        order: 5;
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        margin-right: 0;
     }
 }
 

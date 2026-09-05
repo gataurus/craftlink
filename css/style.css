@@ -798,17 +798,46 @@ body {
 }
 
 /* ================================================================
-   MOBILE HERO
+   HERO — Desktop
    ================================================================ */
 
-.hero-visual-desktop {
-    flex-shrink: 0;
-    margin-left: auto;
+.hero .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
 }
 
-.hero-visual-mobile {
-    display: none;
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
 }
+
+.hero-visual {
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.hero-badge {
+    margin-right: 20px;
+}
+
+.hero-content h1 {
+    margin-right: 20px;
+}
+
+.hero-content p {
+    margin-right: 20px;
+}
+
+.hero-buttons {
+    margin-right: 20px;
+}
+
+/* ================================================================
+   HERO — Mobile
+   ================================================================ */
 
 @media (max-width: 768px) {
     .hero .container {
@@ -824,10 +853,21 @@ body {
         width: 100%;
     }
 
-    .hero-visual-mobile {
-        display: block;
-        margin: 20px auto;
+    .hero-badge {
+        order: 1;
+        margin-bottom: 8px;
+    }
+
+    .hero-content h1 {
+        order: 2;
+        margin-bottom: 20px;
+    }
+
+    .hero-visual {
+        order: 3;
+        margin: 10px auto 20px;
         width: 100%;
+        margin-left: 0;
     }
 
     .hero-icon-bg {
@@ -840,16 +880,14 @@ body {
         animation: hero-float 4s ease-in-out infinite;
     }
 
-    .hero-visual-desktop {
-        display: none;
-    }
-
     .hero-content p {
+        order: 4;
         max-width: 100%;
         margin-bottom: 20px;
     }
 
     .hero-buttons {
+        order: 5;
         flex-direction: column;
         align-items: stretch;
         width: 100%;

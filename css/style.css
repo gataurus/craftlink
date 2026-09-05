@@ -802,31 +802,27 @@ body {
    ================================================================ */
 
 @media (max-width: 768px) {
-    .hero .container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        text-align: center;
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
     .hero-badge {
-        grid-column: 1;
-        grid-row: 1;
-        justify-self: center;
+        order: 1;
         margin-bottom: 8px;
     }
 
     .hero-content h1 {
-        grid-column: 1;
-        grid-row: 2;
+        order: 2;
         margin-bottom: 20px;
     }
 
     .hero-visual {
-        grid-column: 1;
-        grid-row: 3;
-        justify-self: center;
+        order: 3;
         margin: 10px auto 20px;
+        width: 100%;
     }
 
     .hero-icon-bg {
@@ -840,15 +836,13 @@ body {
     }
 
     .hero-content p {
-        grid-column: 1;
-        grid-row: 4;
+        order: 4;
         max-width: 100%;
         margin-bottom: 20px;
     }
 
     .hero-buttons {
-        grid-column: 1;
-        grid-row: 5;
+        order: 5;
         flex-direction: column;
         align-items: stretch;
         width: 100%;

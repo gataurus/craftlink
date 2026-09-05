@@ -802,17 +802,18 @@ body {
    ================================================================ */
 
 .hero .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
     align-items: center;
-    gap: 50px;
 }
 
 .hero-content {
-    flex: 1;
+    grid-column: 1;
 }
 
 .hero-visual {
-    flex-shrink: 0;
+    grid-column: 2;
 }
 
 .hero-icon-bg {
@@ -836,17 +837,18 @@ body {
 }
 
 /* ================================================================
-   HERO — Mobile
+   HERO - Mobile
    ================================================================ */
 
 @media (max-width: 768px) {
     .hero .container {
-        flex-direction: column;
-        text-align: center;
+        grid-template-columns: 1fr;
         gap: 20px;
+        text-align: center;
     }
 
     .hero-content {
+        grid-column: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -863,8 +865,8 @@ body {
         margin-bottom: 20px;
     }
 
-    /* Атом встаёт после заголовка */
     .hero-visual {
+        grid-column: 1;
         order: 3;
         margin: 20px auto;
         width: 100%;
